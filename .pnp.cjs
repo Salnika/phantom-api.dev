@@ -60,7 +60,7 @@ const RAW_RUNTIME_STATE =
           ["phantom-api-monorepo", "workspace:."],\
           ["syncpack", "npm:13.0.4"],\
           ["typedoc", "virtual:896f9be96c54671e2a764d12dd66a3c4ecec90363a4b99a53cdfb2433e3475682e845d14c63ddcdbf06d1acefddd1660a84614f14966ab898a8eeadc4720efae#npm:0.28.7"],\
-          ["typedoc-plugin-markdown", "virtual:896f9be96c54671e2a764d12dd66a3c4ecec90363a4b99a53cdfb2433e3475682e845d14c63ddcdbf06d1acefddd1660a84614f14966ab898a8eeadc4720efae#npm:4.7.0"],\
+          ["typedoc-plugin-markdown", "virtual:896f9be96c54671e2a764d12dd66a3c4ecec90363a4b99a53cdfb2433e3475682e845d14c63ddcdbf06d1acefddd1660a84614f14966ab898a8eeadc4720efae#npm:4.8.0"],\
           ["typescript", "patch:typescript@npm%3A5.8.3#optional!builtin<compat/typescript>::version=5.8.3&hash=5786d5"]\
         ],\
         "linkType": "SOFT"\
@@ -7433,7 +7433,7 @@ const RAW_RUNTIME_STATE =
           ["supertest", "npm:7.1.1"],\
           ["tsx", "npm:4.20.3"],\
           ["typedoc", "virtual:896f9be96c54671e2a764d12dd66a3c4ecec90363a4b99a53cdfb2433e3475682e845d14c63ddcdbf06d1acefddd1660a84614f14966ab898a8eeadc4720efae#npm:0.28.7"],\
-          ["typedoc-plugin-markdown", "virtual:896f9be96c54671e2a764d12dd66a3c4ecec90363a4b99a53cdfb2433e3475682e845d14c63ddcdbf06d1acefddd1660a84614f14966ab898a8eeadc4720efae#npm:4.7.0"],\
+          ["typedoc-plugin-markdown", "virtual:896f9be96c54671e2a764d12dd66a3c4ecec90363a4b99a53cdfb2433e3475682e845d14c63ddcdbf06d1acefddd1660a84614f14966ab898a8eeadc4720efae#npm:4.8.0"],\
           ["typescript", "patch:typescript@npm%3A5.8.3#optional!builtin<compat/typescript>::version=5.8.3&hash=5786d5"],\
           ["vitest", "virtual:09e1a04afd45af093cd8c29b97ddf4d19df61499634c38d0af82bb90c3d7132ade4b7fe95e3fb270962602a48f0e33defa03b58e28d078240eaec795cfcd7520#npm:3.2.4"],\
           ["zod", "npm:3.25.74"]\
@@ -7453,7 +7453,7 @@ const RAW_RUNTIME_STATE =
           ["oxlint", "npm:1.5.0"],\
           ["phantom-api-client", "workspace:phantom-api"],\
           ["typedoc", "virtual:896f9be96c54671e2a764d12dd66a3c4ecec90363a4b99a53cdfb2433e3475682e845d14c63ddcdbf06d1acefddd1660a84614f14966ab898a8eeadc4720efae#npm:0.28.7"],\
-          ["typedoc-plugin-markdown", "virtual:896f9be96c54671e2a764d12dd66a3c4ecec90363a4b99a53cdfb2433e3475682e845d14c63ddcdbf06d1acefddd1660a84614f14966ab898a8eeadc4720efae#npm:4.7.0"],\
+          ["typedoc-plugin-markdown", "virtual:896f9be96c54671e2a764d12dd66a3c4ecec90363a4b99a53cdfb2433e3475682e845d14c63ddcdbf06d1acefddd1660a84614f14966ab898a8eeadc4720efae#npm:4.8.0"],\
           ["typescript", "patch:typescript@npm%3A5.8.3#optional!builtin<compat/typescript>::version=5.8.3&hash=5786d5"]\
         ],\
         "linkType": "SOFT"\
@@ -7475,7 +7475,7 @@ const RAW_RUNTIME_STATE =
           ["phantom-api-monorepo", "workspace:."],\
           ["syncpack", "npm:13.0.4"],\
           ["typedoc", "virtual:896f9be96c54671e2a764d12dd66a3c4ecec90363a4b99a53cdfb2433e3475682e845d14c63ddcdbf06d1acefddd1660a84614f14966ab898a8eeadc4720efae#npm:0.28.7"],\
-          ["typedoc-plugin-markdown", "virtual:896f9be96c54671e2a764d12dd66a3c4ecec90363a4b99a53cdfb2433e3475682e845d14c63ddcdbf06d1acefddd1660a84614f14966ab898a8eeadc4720efae#npm:4.7.0"],\
+          ["typedoc-plugin-markdown", "virtual:896f9be96c54671e2a764d12dd66a3c4ecec90363a4b99a53cdfb2433e3475682e845d14c63ddcdbf06d1acefddd1660a84614f14966ab898a8eeadc4720efae#npm:4.8.0"],\
           ["typescript", "patch:typescript@npm%3A5.8.3#optional!builtin<compat/typescript>::version=5.8.3&hash=5786d5"]\
         ],\
         "linkType": "SOFT"\
@@ -9387,19 +9387,19 @@ const RAW_RUNTIME_STATE =
       }]\
     ]],\
     ["typedoc-plugin-markdown", [\
-      ["npm:4.7.0", {\
-        "packageLocation": "./.yarn/cache/typedoc-plugin-markdown-npm-4.7.0-cab25d8c3f-066cb8a0f9.zip/node_modules/typedoc-plugin-markdown/",\
+      ["npm:4.8.0", {\
+        "packageLocation": "./.yarn/cache/typedoc-plugin-markdown-npm-4.8.0-db2aa07b5e-c97953b199.zip/node_modules/typedoc-plugin-markdown/",\
         "packageDependencies": [\
-          ["typedoc-plugin-markdown", "npm:4.7.0"]\
+          ["typedoc-plugin-markdown", "npm:4.8.0"]\
         ],\
         "linkType": "SOFT"\
       }],\
-      ["virtual:896f9be96c54671e2a764d12dd66a3c4ecec90363a4b99a53cdfb2433e3475682e845d14c63ddcdbf06d1acefddd1660a84614f14966ab898a8eeadc4720efae#npm:4.7.0", {\
-        "packageLocation": "./.yarn/__virtual__/typedoc-plugin-markdown-virtual-fe35c66dc1/0/cache/typedoc-plugin-markdown-npm-4.7.0-cab25d8c3f-066cb8a0f9.zip/node_modules/typedoc-plugin-markdown/",\
+      ["virtual:896f9be96c54671e2a764d12dd66a3c4ecec90363a4b99a53cdfb2433e3475682e845d14c63ddcdbf06d1acefddd1660a84614f14966ab898a8eeadc4720efae#npm:4.8.0", {\
+        "packageLocation": "./.yarn/__virtual__/typedoc-plugin-markdown-virtual-babddc758c/0/cache/typedoc-plugin-markdown-npm-4.8.0-db2aa07b5e-c97953b199.zip/node_modules/typedoc-plugin-markdown/",\
         "packageDependencies": [\
           ["@types/typedoc", null],\
           ["typedoc", "virtual:896f9be96c54671e2a764d12dd66a3c4ecec90363a4b99a53cdfb2433e3475682e845d14c63ddcdbf06d1acefddd1660a84614f14966ab898a8eeadc4720efae#npm:0.28.7"],\
-          ["typedoc-plugin-markdown", "virtual:896f9be96c54671e2a764d12dd66a3c4ecec90363a4b99a53cdfb2433e3475682e845d14c63ddcdbf06d1acefddd1660a84614f14966ab898a8eeadc4720efae#npm:4.7.0"]\
+          ["typedoc-plugin-markdown", "virtual:896f9be96c54671e2a764d12dd66a3c4ecec90363a4b99a53cdfb2433e3475682e845d14c63ddcdbf06d1acefddd1660a84614f14966ab898a8eeadc4720efae#npm:4.8.0"]\
         ],\
         "packagePeers": [\
           "@types/typedoc",\
