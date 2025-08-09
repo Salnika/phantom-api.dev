@@ -2576,7 +2576,7 @@ __metadata:
     knip: "npm:^5.61.3"
     lucide-react: "npm:^0.525.0"
     oxlint: "npm:^1.0.0"
-    pino: "npm:^9.7.0"
+    pino: "npm:^9.8.0"
     postcss: "npm:^8.5.6"
     react: "npm:^19.1.0"
     react-dom: "npm:^19.1.0"
@@ -6028,7 +6028,7 @@ __metadata:
     knip: "npm:^5.61.3"
     oxlint: "npm:^1.0.0"
     pg: "npm:^8.12.0"
-    pino: "npm:^9.7.0"
+    pino: "npm:^9.8.0"
     pino-pretty: "npm:^13.0.0"
     redis: "npm:^4.7.0"
     supertest: "npm:^7.1.1"
@@ -6154,9 +6154,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"pino@npm:^9.7.0":
-  version: 9.7.0
-  resolution: "pino@npm:9.7.0"
+"pino@npm:^9.8.0":
+  version: 9.8.0
+  resolution: "pino@npm:9.8.0"
   dependencies:
     atomic-sleep: "npm:^1.0.0"
     fast-redact: "npm:^3.1.1"
@@ -6171,7 +6171,7 @@ __metadata:
     thread-stream: "npm:^3.0.0"
   bin:
     pino: bin.js
-  checksum: 10c0/c7f8a83a9a9d728b4eff6d0f4b9367f031c91bcaa5806fbf0eedcc8e77faba593d59baf11a8fba0dd1c778bb17ca7ed01418ac1df4ec129faeedd4f3ecaff66f
+  checksum: 10c0/a6de40d8c777520a0f2bdd1727512db2dba51d0d8098500ec8326f1f95412e4e704ee4301287ccbbafbf7a7ab07999d5659333a7079d1b70341d0d69e4d40b29
   languageName: node
   linkType: hard
 
