@@ -7,7 +7,7 @@
     "bcrypt": "^6.0.0",
     "chalk": "^4.1.2",
     "dotenv": "^17.0.1",
-    "knip": "^5.61.3",
+    "knip": "^5.62.0",
     "oxlint": "^1.0.0",
     "phantom-api-client": "workspace:*",
     "syncpack": "^13.0.4",
