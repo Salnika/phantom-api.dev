@@ -9,7 +9,7 @@
     "dotenv": "^17.0.1",
     "knip": "^5.61.3",
     "oxlint": "^1.0.0",
-    "phantom-api-client": "workspace:*",
+    "phantom-api": "workspace:*",
     "syncpack": "^13.0.4",
     "typedoc": "^0.28.7",
     "typedoc-plugin-markdown": "^4.7.0",

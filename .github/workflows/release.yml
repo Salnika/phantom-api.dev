@@ -80,7 +80,7 @@ jobs:
 
   publish-npm:
     name: Publish npm package (requires approval)
-    if: needs.prepare.outputs.PROJECT == 'phantom-api'
+    if: needs.prepare.outputs.PROJECT == 'phantom-api-client'
     runs-on: ubuntu-latest
     needs: [prepare, build]
     environment: release  # configure environment protection to require manual approval
@@ -94,7 +94,7 @@ jobs:
       - name: Install dependencies
         run: yarn install --immutable
       - name: Build package
-        run: yarn workspace phantom-api build
+        run: yarn workspace phantom-api-client build
       - name: Publish to npm
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
