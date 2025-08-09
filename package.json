@@ -1,0 +1,44 @@
+{
+  "name": "phantom-api-monorepo",
+  "devDependencies": {
+    "@changesets/cli": "^2.29.5",
+    "@types/bcrypt": "^5.0.2",
+    "@types/node": "^24.0.9",
+    "bcrypt": "^6.0.0",
+    "chalk": "^4.1.2",
+    "dotenv": "^17.0.1",
+    "knip": "^5.61.3",
+    "oxlint": "^1.0.0",
+    "phantom-api-client": "workspace:*",
+    "syncpack": "^13.0.4",
+    "typedoc": "^0.28.7",
+    "typedoc-plugin-markdown": "^4.7.0",
+    "typescript": "^5.8.3"
+  },
+  "packageManager": "yarn@4.9.2",
+  "private": true,
+  "license": "MIT",
+  "scripts": {
+    "docs:generate": "node scripts/generate-docs.js",
+    "docs:serve": "node scripts/serve-docs.js",
+    "knip": "echo \"No knip for monorepo\"",
+    "lint": "echo ok",
+    "pm2:logs": "pm2 logs",
+    "pm2:restart": "pm2 restart all",
+    "pm2:start": "pm2 start ecosystem.config.js",
+    "pm2:stop": "pm2 stop all",
+    "release": "changeset publish",
+    "version": "changeset version",
+    "docker:build": "docker build -t salnika/phantom-api.dev:latest .",
+    "docker:build-dev": "docker build -t salnika/phantom-api.dev:dev .",
+    "docker:run": "docker run -p 3000:3000 --env-file .env.example salnika/phantom-api.dev:latest",
+    "docker:publish": "docker push salnika/phantom-api.dev:latest",
+    "docker:publish-dev": "docker push salnika/phantom-api.dev:dev"
+  },
+  "workspaces": [
+    "phantom-api-backend",
+    "phantom-api",
+    "admin-interface",
+    "public-doc"
+  ]
+}

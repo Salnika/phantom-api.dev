@@ -1,0 +1,131 @@
+name: Release (build + gated publish)
+
+on:
+  push:
+    tags:
+      - 'release/*/*'
+
+permissions:
+  contents: write   # required for gh-pages deploy
+  packages: write
+
+concurrency: release-${{ github.ref_name }}
+
+jobs:
+  prepare:
+    name: Parse release tag
+    runs-on: ubuntu-latest
+    outputs:
+      PROJECT: ${{ steps.parse.outputs.PROJECT }}
+      VERSION: ${{ steps.parse.outputs.VERSION }}
+    steps:
+      - name: Parse tag
+        id: parse
+        run: |
+          TAG_NAME="${{ github.ref_name }}"
+          PROJECT=$(echo "$TAG_NAME" | cut -d'/' -f2)
+          VERSION=$(echo "$TAG_NAME" | cut -d'/' -f3)
+          echo "PROJECT=$PROJECT" >> $GITHUB_OUTPUT
+          echo "VERSION=$VERSION" >> $GITHUB_OUTPUT
+          echo "Parsed: PROJECT=$PROJECT VERSION=$VERSION"
+
+  build:
+    name: Build workspace
+    runs-on: ubuntu-latest
+    needs: prepare
+    steps:
+      - uses: actions/checkout@v4
+      - name: Setup Node.js & Yarn
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - run: corepack enable && corepack prepare yarn@4.9.2 --activate
+      - name: Install dependencies
+        run: yarn install --immutable
+      - name: Build selected workspace
+        run: yarn workspace ${{ needs.prepare.outputs.PROJECT }} build
+      - name: Archive build artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: build-${{ needs.prepare.outputs.PROJECT }}-${{ needs.prepare.outputs.VERSION }}
+          path: |
+            ${{ needs.prepare.outputs.PROJECT }}/dist
+            ${{ needs.prepare.outputs.PROJECT }}/build
+          if-no-files-found: ignore
+
+  publish-docker:
+    name: Publish Docker image (requires approval)
+    if: needs.prepare.outputs.PROJECT == 'phantom-api-backend'
+    runs-on: ubuntu-latest
+    needs: [prepare, build]
+    environment: release  # configure environment protection to require manual approval
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+      - name: Login to Docker Hub
+        uses: docker/login-action@v3
+        with:
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
+      - name: Build and push
+        uses: docker/build-push-action@v6
+        with:
+          context: .
+          file: ./Dockerfile
+          push: true
+          tags: |
+            salnika/phantom-api.dev:${{ needs.prepare.outputs.VERSION }}
+            salnika/phantom-api.dev:latest
+
+  publish-npm:
+    name: Publish npm package (requires approval)
+    if: needs.prepare.outputs.PROJECT == 'phantom-api'
+    runs-on: ubuntu-latest
+    needs: [prepare, build]
+    environment: release  # configure environment protection to require manual approval
+    steps:
+      - uses: actions/checkout@v4
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          registry-url: 'https://registry.npmjs.org'
+      - name: Install dependencies
+        run: yarn install --immutable
+      - name: Build package
+        run: yarn workspace phantom-api build
+      - name: Publish to npm
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+        run: |
+          cd phantom-api
+          npm publish
+
+  docs:
+    name: Build and deploy documentation
+    runs-on: ubuntu-latest
+    needs: [prepare, build]
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+
+      - name: Install MkDocs
+        run: |
+          python -m pip install --upgrade pip
+          pip install mkdocs-material
+
+      - name: Build documentation (MkDocs)
+        working-directory: public-doc
+        run: mkdocs build
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./public-doc/site

@@ -1,0 +1,156 @@
+version: 2
+updates:
+  # Enable version updates for npm (yarn)
+  - package-ecosystem: "npm"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+      time: "09:00"
+    open-pull-requests-limit: 10
+    reviewers:
+      - "alexis.salnikoff"
+    assignees:
+      - "alexis.salnikoff"
+    commit-message:
+      prefix: "chore"
+      include: "scope"
+    labels:
+      - "dependencies"
+      - "auto-merge"
+    ignore:
+      # Ignore major version updates for stability
+      - dependency-name: "*"
+        update-types: ["version-update:semver-major"]
+
+  # Backend workspace
+  - package-ecosystem: "npm"
+    directory: "/backend"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+      time: "09:30"
+    open-pull-requests-limit: 5
+    reviewers:
+      - "alexis.salnikoff"
+    commit-message:
+      prefix: "chore(backend)"
+    labels:
+      - "dependencies"
+      - "backend"
+
+  # Client package workspace
+  - package-ecosystem: "npm"
+    directory: "/client-package"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+      time: "10:00"
+    open-pull-requests-limit: 5
+    reviewers:
+      - "alexis.salnikoff"
+    commit-message:
+      prefix: "chore(client)"
+    labels:
+      - "dependencies"
+      - "client"
+
+  # Admin interface workspace
+  - package-ecosystem: "npm"
+    directory: "/admin-interface"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+      time: "10:30"
+    open-pull-requests-limit: 5
+    reviewers:
+      - "alexis.salnikoff"
+    commit-message:
+      prefix: "chore(admin)"
+    labels:
+      - "dependencies"
+      - "frontend"
+      - "admin"
+
+  # Demo frontend workspace
+  - package-ecosystem: "npm"
+    directory: "/demo-front"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+      time: "11:00"
+    open-pull-requests-limit: 5
+    reviewers:
+      - "alexis.salnikoff"
+    commit-message:
+      prefix: "chore(demo)"
+    labels:
+      - "dependencies"
+      - "frontend"
+      - "demo"
+
+  # Website workspace
+  - package-ecosystem: "npm"
+    directory: "/website"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+      time: "11:30"
+    open-pull-requests-limit: 5
+    reviewers:
+      - "alexis.salnikoff"
+    commit-message:
+      prefix: "chore(website)"
+    labels:
+      - "dependencies"
+      - "frontend"
+      - "website"
+
+  # Documentation workspace
+  - package-ecosystem: "npm"
+    directory: "/docs"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+      time: "12:00"
+    open-pull-requests-limit: 5
+    reviewers:
+      - "alexis.salnikoff"
+    commit-message:
+      prefix: "chore(docs)"
+    labels:
+      - "dependencies"
+      - "documentation"
+
+  # GitHub Actions
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+      day: "tuesday"
+      time: "09:00"
+    open-pull-requests-limit: 5
+    reviewers:
+      - "alexis.salnikoff"
+    commit-message:
+      prefix: "chore(ci)"
+    labels:
+      - "dependencies"
+      - "github-actions"
+      - "ci/cd"
+
+  # Docker
+  - package-ecosystem: "docker"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+      day: "tuesday"
+      time: "10:00"
+    open-pull-requests-limit: 3
+    reviewers:
+      - "alexis.salnikoff"
+    commit-message:
+      prefix: "chore(docker)"
+    labels:
+      - "dependencies"
+      - "docker"

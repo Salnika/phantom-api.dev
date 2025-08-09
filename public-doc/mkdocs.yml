@@ -1,0 +1,73 @@
+site_name: Phantom API Documentation
+site_description: Dynamic backend system with metadata-driven API generation
+repo_url: https://github.com/salnika/phantom-api.dev/
+site_url: https://phantom-api.dev
+
+theme:
+  name: material
+  palette:
+    # Palette toggle for light mode
+    - scheme: default
+      primary: blue
+      accent: blue
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    # Palette toggle for dark mode
+    - scheme: slate
+      primary: blue
+      accent: blue
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.expand
+    - navigation.top
+    - search.suggest
+    - search.highlight
+    - content.code.copy
+    - content.tabs.link
+
+markdown_extensions:
+  - pymdownx.superfences
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.highlight:
+      anchor_linenums: true
+      linenums: true
+      linenums_style: table
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - admonition
+  - pymdownx.details
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - toc:
+      permalink: true
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+
+nav:
+  - Home: index.md
+  - API Documentation:
+    - Backend API: backend-api.md
+    - Client Package: client-package.md
+    - Policies: policies.md
+    - Relationships: relationships.md
+  - API Reference: api-reference.md
+  - Tools:
+    - Self hosting with Docker: self-host-docker.md
+    - Admin Interface: interface-admin.md
+    - Migrations: migrations.md
+    - Seeding: seeding.md
+
+plugins:
+  - search

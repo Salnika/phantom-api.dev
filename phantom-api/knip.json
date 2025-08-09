@@ -1,0 +1,21 @@
+{
+  "entry": [],
+  "project": [
+    "src/**/*.ts"
+  ],
+  "ignore": [
+    "dist/**",
+    "node_modules/**"
+  ],
+  "ignoreDependencies": [
+    "oxlint",
+    "typedoc-plugin-markdown",
+    "typedoc"
+  ],
+  "ignoreBinaries": [
+    "tsc",
+    "knip",
+    "oxlint",
+    "typedoc"
+  ]
+}

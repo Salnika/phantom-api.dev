@@ -1,0 +1,30 @@
+{
+  "entry": [
+    "src/main.tsx",
+    "src/components/ui/index.ts",
+    "src/components/ui/table.tsx"
+  ],
+  "project": [
+    "src/**/*.{ts,tsx}"
+  ],
+  "ignore": [
+    "dist/**",
+    "build/**",
+    "node_modules/**",
+    "coverage/**",
+    "*.config.*",
+    "vite.config.ts",
+    "vitest.config.ts"
+  ],
+  "ignoreDependencies": [
+    "globals",
+    "oxlint"
+  ],
+  "ignoreBinaries": [
+    "vite",
+    "tsc",
+    "knip",
+    "oxlint"
+  ],
+  "ignoreExportsUsedInFile": true
+}

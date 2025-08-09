@@ -1,0 +1,25 @@
+version: '3.8'
+
+services:
+  backend:
+    build:
+      context: ./phantom-api-backend
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./phantom-api-backend/data:/app/data
+      - ./phantom-api-backend/logs:/app/logs
+    env_file:
+      - .env
+    restart: unless-stopped
+
+  admin:
+    build:
+      context: ./admin-interface
+      dockerfile: Dockerfile
+    ports:
+      - "5173:80"
+    depends_on:
+      - backend
+    restart: unless-stopped

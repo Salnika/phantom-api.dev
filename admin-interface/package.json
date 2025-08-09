@@ -1,0 +1,56 @@
+{
+  "name": "admin-interface",
+  "version": "0.2.0-alpha",
+  "dependencies": {
+    "@radix-ui/react-dialog": "^1.1.14",
+    "@radix-ui/react-dropdown-menu": "^2.1.15",
+    "@radix-ui/react-label": "^2.1.7",
+    "@radix-ui/react-select": "^2.2.5",
+    "@radix-ui/react-slot": "^1.2.3",
+    "axios": "^1.10.0",
+    "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
+    "date-fns": "^4.1.0",
+    "knip": "^5.61.3",
+    "lucide-react": "^0.525.0",
+    "pino": "^9.7.0",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "react-router-dom": "^7.6.3",
+    "tailwind-merge": "^3.3.1"
+  },
+  "devDependencies": {
+    "@tailwindcss/forms": "^0.5.10",
+    "@types/node": "^24.0.9",
+    "@types/react": "^19.1.8",
+    "@types/react-dom": "^19.1.6",
+    "@vitejs/plugin-react": "4.6.0",
+    "@vitest/coverage-v8": "^3.2.4",
+    "autoprefixer": "^10.4.21",
+    "globals": "^16.2.0",
+    "jsdom": "^26.1.0",
+    "oxlint": "^1.0.0",
+    "postcss": "^8.5.6",
+    "tailwindcss": "^3.4.0",
+    "typescript": "^5.8.3",
+    "vite": "^7.0.0",
+    "vitest": "^3.2.4"
+  },
+  "private": true,
+  "license": "MIT",
+  "projectConfig": {
+    "type": "app",
+    "artifactName": "admin-interface",
+    "testCommand": "test"
+  },
+  "scripts": {
+    "build": "tsc -b && vite build",
+    "dev": "vite",
+    "knip": "knip --config knip.json",
+    "lint": "oxlint .",
+    "preview": "vite preview",
+    "test": "echo \"No test specified\" && exit 0",
+    "typecheck": "tsc --noEmit"
+  },
+  "type": "module"
+}

@@ -1,0 +1,112 @@
+# Node.js dependencies and build artifacts
+node_modules
+*/node_modules
+dist
+*/dist
+!admin-interface/dist
+
+# Git and version control
+.git
+.gitignore
+.github
+
+# Environment and configuration files
+.env
+.env.*
+!.env.example
+
+# Logs and temporary files
+*.log
+logs/
+*/logs/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Documentation
+docs/
+*.md
+!README.md
+
+# Development tools and IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Test files and coverage
+coverage/
+.nyc_output/
+*.test.js
+*.test.ts
+*.spec.js
+*.spec.ts
+__tests__/
+test/
+
+# Package manager files (we'll copy explicitly)
+package-lock.json
+bun.lock
+
+# Build and cache directories
+.cache/
+.parcel-cache/
+.next/
+.nuxt/
+.vuepress/dist/
+
+# Runtime data
+pids/
+*.pid
+*.seed
+*.pid.lock
+
+# Optional npm cache directory
+.npm
+
+# ESLint cache
+.eslintcache
+
+# Microbundle cache
+.rpt2_cache/
+.rts2_cache_cjs/
+.rts2_cache_es/
+.rts2_cache_umd/
+
+# TypeScript cache
+*.tsbuildinfo
+
+# Temporary folders
+tmp/
+temp/
+.tmp/
+
+# Editor directories and files
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Backup files
+backups/
+*.backup
+*.bak
+
+# Monitoring and deployment
+monitoring/
+k8s/
+
+!docker-compose.yml

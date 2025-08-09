@@ -1,0 +1,46 @@
+{
+  "entry": [
+    "src/__tests__/**/*.test.ts",
+    "src/seed.ts",
+    "src/validation.ts",
+    "vitest.config.js",
+    "src/test-setup.ts",
+    "seeds/demo_seed.ts"
+  ],
+  "ignore": [
+    "dist/**",
+    "coverage/**",
+    "node_modules/**",
+    "vitest.config.cjs",
+    "src/middleware/auth.ts",
+    "src/services/policyService.ts",
+    "docs/**",
+    "src/database.ts",
+    "src/middleware/policyAuth.ts",
+    "src/middleware/validation.ts",
+    "src/middleware/csrf.ts",
+    "src/middleware/auth.ts"
+  ],
+  "ignoreDependencies": [
+    "dotenv",
+    "tsx",
+    "@vitest/coverage-v8",
+    "pino-pretty",
+    "oxlint",
+    "typedoc-plugin-markdown",
+    "typedoc",
+    "esbuild"
+  ],
+  "ignoreBinaries": [
+    "knip",
+    "tsx",
+    "oxlint",
+    "tsc",
+    "vitest",
+    "esbuild",
+    "typedoc"
+  ],
+  "vitest": {
+    "config": "vitest.config.ts"
+  }
+}

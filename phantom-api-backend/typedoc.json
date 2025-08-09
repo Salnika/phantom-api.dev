@@ -1,0 +1,11 @@
+{
+    "entryPoints": [
+        "./src/**/*.ts",
+    ],
+    "out": "docs/phantom-api-backend",
+    "tsconfig": "./tsconfig.json",
+    "excludePrivate": true,
+    "excludeInternal": true,
+    "excludeProtected": true,
+    "includeVersion": true
+}

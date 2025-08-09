@@ -1,0 +1,21 @@
+{
+  "name": "public-doc",
+  "description": "Public documentation project",
+  "version": "0.2.0-alpha",
+  "license": "MIT",
+  "dependencies": {
+    "knip": "^5.61.3"
+  },
+  "projectConfig": {
+    "type": "app",
+    "artifactName": "public-doc",
+    "testCommand": "test"
+  },
+  "scripts": {
+    "docs:build": "mkdocs build",
+    "docs:dev": "mkdocs generate --watch",
+    "docs:serve": "mkdocs serve",
+    "knip": "echo \"No knip for docs\"",
+    "test": "echo \"No test specified\" && exit 0"
+  }
+}

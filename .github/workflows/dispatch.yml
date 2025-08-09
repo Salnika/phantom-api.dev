@@ -1,0 +1,117 @@
+# .github/workflows/ci.yml
+name: CI
+
+on:
+  push:
+    branches: [ main, master, develop ]
+    tags:
+      - '*/*'
+  pull_request:
+    branches: [ main, master, develop ]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  packages: write
+
+jobs:
+  detect-changes:
+    runs-on: ubuntu-latest
+    outputs:
+      matrix: ${{ steps.generate-matrix.outputs.matrix }}
+      has-changes: ${{ steps.generate-matrix.outputs.has-changes }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0 
+
+      - name: Setup Node.js & Yarn
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - run: corepack enable
+
+      - name: Get changed files
+        id: changed-files
+        uses: tj-actions/changed-files@v44
+
+      - name: Generate Matrix from changed Workspaces
+        id: generate-matrix
+        run: |
+          # Installer jq pour parser le JSON
+          sudo apt-get install -y jq
+
+          # Obtenir la liste des workspaces au format JSON
+          WORKSPACES_JSON=$(yarn workspaces list --json)
+
+          # Obtenir la liste des fichiers modifiés
+          CHANGED_FILES="${{ steps.changed-files.outputs.all_changed_files }}"
+          echo "Changed files: $CHANGED_FILES"
+
+          # Vérifier si un fichier à la racine a été modifié (yarn.lock, package.json, .github)
+          # Si oui, on considère que tous les workspaces sont affectés
+          ROOT_CHANGED=$(echo "$CHANGED_FILES" | grep -E '^(\.github/|package\.json|yarn\.lock|tsconfig\.base\.json)' || true)
+
+          MATRIX="[]"
+          AFFECTED_COUNT=0
+
+          echo "$WORKSPACES_JSON" | jq -c '.[]' | while read -r line; do
+            if echo "$line" | jq -e 'type=="object"' >/dev/null; then
+              WORKSPACE_NAME=$(echo "$line" | jq -r '.name')
+              WORKSPACE_LOCATION=$(echo "$line" | jq -r '.location')
+              AFFECTED=false
+
+              if [[ -n "$ROOT_CHANGED" || "${{ github.event_name == 'workflow_dispatch' }}" || "${{ github.ref_type == 'tag' }}" ]]; then
+                AFFECTED=true
+              else
+                # Vérifier si des fichiers ont été modifiés dans le dossier du workspace
+                if echo "$CHANGED_FILES" | grep -q "^$WORKSPACE_LOCATION/"; then
+                  AFFECTED=true
+                fi
+              fi
+
+              if [ "$AFFECTED" = true ]; then
+                ((AFFECTED_COUNT++))
+                # Lire la config depuis le package.json du workspace
+                PKG_JSON_PATH="$WORKSPACE_LOCATION/package.json"
+                if [ -f "$PKG_JSON_PATH" ]; then
+                  # Extraire les scripts et la config de projet
+                  SCRIPTS_JSON=$(jq '.scripts' "$PKG_JSON_PATH")
+                  CONFIG_JSON=$(jq '.projectConfig // {}' "$PKG_JSON_PATH") # Utilise un objet vide si projectConfig n'existe pas
+
+                  # Construire l'objet pour la matrice
+                  MATRIX_ENTRY=$(jq -n \
+                    --arg name "$WORKSPACE_NAME" \
+                    --arg location "$WORKSPACE_LOCATION" \
+                    --argjson scripts "$SCRIPTS_JSON" \
+                    --argjson config "$CONFIG_JSON" \
+                    '{name: $name, location: $location, scripts: $scripts, config: $config}')
+
+                  MATRIX=$(echo "$MATRIX" | jq --argjson entry "$MATRIX_ENTRY" '. + [$entry]')
+                fi
+              fi
+            else
+              echo "Ligne inattendue : $line"
+            fi
+          done
+
+          if [ $AFFECTED_COUNT -gt 0 ]; then
+            echo "has-changes=true" >> $GITHUB_OUTPUT
+          else
+            echo "has-changes=false" >> $GITHUB_OUTPUT
+          fi
+          
+          echo "matrix=$(echo $MATRIX | jq -c .)" >> $GITHUB_OUTPUT
+          echo "Generated Matrix:"
+          echo $MATRIX | jq .
+
+  test:
+    needs: detect-changes
+    if: needs.detect-changes.outputs.has-changes == 'true'
+    uses: ./.github/workflows/test.yml
+    with:
+      matrix: ${{ needs.detect-changes.outputs.matrix }}
+    secrets: inherit
+
+  # NOTE: Deployment is disabled here. Releases use tag-based workflow.

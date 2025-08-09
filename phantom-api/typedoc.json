@@ -1,0 +1,13 @@
+{
+    "entryPoints": [
+        "./src/index.ts",
+        "./src/migration-cli.ts",
+        "./src/seed-cli.ts"
+    ],
+    "out": "docs/phantom-api",
+    "tsconfig": "./tsconfig.json",
+    "excludePrivate": true,
+    "excludeInternal": true,
+    "excludeProtected": true,
+    "includeVersion": true
+}

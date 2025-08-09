@@ -1,0 +1,16 @@
+{
+    "ignorePatterns": [
+        "node_modules/",
+        "dist/",
+        "**/dist",
+        "*.lock"
+    ],
+    "rules": {
+        "no-unused-vars": [
+            "error",
+            {
+                "argsIgnorePattern": "^_"
+            }
+        ]
+    }
+}
