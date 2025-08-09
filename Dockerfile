@@ -25,6 +25,7 @@ RUN corepack enable
 
 # Copy infra Yarn 4 (fichiers de config PnP, etc)
 COPY --from=deps /app/.pnp.cjs ./.pnp.cjs
+COPY --from=deps /app/.pnp.loader.mjs ./.pnp.loader.mjs
 COPY --from=deps /app/.yarn/ ./.yarn/
 COPY --from=deps /app/yarn.lock ./yarn.lock
 COPY --from=deps /app/.yarnrc.yml ./.yarnrc.yml
@@ -40,6 +41,7 @@ COPY phantom-api-backend/ ./phantom-api-backend/
 COPY admin-interface/ ./admin-interface/
 
 # Build des projets nécessaires à l'image
+ENV NODE_OPTIONS="--experimental-loader=./.pnp.loader.mjs"
 RUN yarn workspace phantom-api-backend build \
  && yarn workspace admin-interface build
 
@@ -63,6 +65,7 @@ COPY --from=builder --chown=phantom:phantom /app/admin-interface/dist ./admin-in
 
 # Copie infra Yarn PnP pour la résolution runtime
 COPY --from=builder --chown=phantom:phantom /app/.pnp.cjs ./.pnp.cjs
+COPY --from=builder --chown=phantom:phantom /app/.pnp.loader.mjs ./.pnp.loader.mjs
 COPY --from=builder --chown=phantom:phantom /app/.yarn/ ./.yarn/
 COPY --from=builder --chown=phantom:phantom /app/yarn.lock ./yarn.lock
 COPY --from=builder --chown=phantom:phantom /app/.yarnrc.yml ./.yarnrc.yml
