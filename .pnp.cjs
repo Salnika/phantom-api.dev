@@ -2779,16 +2779,16 @@ const RAW_RUNTIME_STATE =
       }]\
     ]],\
     ["@testing-library/jest-dom", [\
-      ["npm:6.6.3", {\
-        "packageLocation": "./.yarn/cache/@testing-library-jest-dom-npm-6.6.3-733adae273-5566b6c0b7.zip/node_modules/@testing-library/jest-dom/",\
+      ["npm:6.6.4", {\
+        "packageLocation": "./.yarn/cache/@testing-library-jest-dom-npm-6.6.4-8b6aca6d24-cb73adf491.zip/node_modules/@testing-library/jest-dom/",\
         "packageDependencies": [\
           ["@adobe/css-tools", "npm:4.4.3"],\
-          ["@testing-library/jest-dom", "npm:6.6.3"],\
+          ["@testing-library/jest-dom", "npm:6.6.4"],\
           ["aria-query", "npm:5.3.2"],\
-          ["chalk", "npm:3.0.0"],\
           ["css.escape", "npm:1.5.1"],\
           ["dom-accessibility-api", "npm:0.6.3"],\
           ["lodash", "npm:4.17.21"],\
+          ["picocolors", "npm:1.1.1"],\
           ["redent", "npm:3.0.0"]\
         ],\
         "linkType": "HARD"\
@@ -3981,15 +3981,6 @@ const RAW_RUNTIME_STATE =
       }]\
     ]],\
     ["chalk", [\
-      ["npm:3.0.0", {\
-        "packageLocation": "./.yarn/cache/chalk-npm-3.0.0-e813208025-ee650b0a06.zip/node_modules/chalk/",\
-        "packageDependencies": [\
-          ["ansi-styles", "npm:4.3.0"],\
-          ["chalk", "npm:3.0.0"],\
-          ["supports-color", "npm:7.2.0"]\
-        ],\
-        "linkType": "HARD"\
-      }],\
       ["npm:4.1.2", {\
         "packageLocation": "./.yarn/cache/chalk-npm-4.1.2-ba8b67ab80-4a3fef5cc3.zip/node_modules/chalk/",\
         "packageDependencies": [\
@@ -7395,7 +7386,7 @@ const RAW_RUNTIME_STATE =
       ["workspace:phantom-api-backend", {\
         "packageLocation": "./phantom-api-backend/",\
         "packageDependencies": [\
-          ["@testing-library/jest-dom", "npm:6.6.3"],\
+          ["@testing-library/jest-dom", "npm:6.6.4"],\
           ["@types/bcryptjs", "npm:3.0.0"],\
           ["@types/better-sqlite3", "npm:7.6.13"],\
           ["@types/commander", "npm:2.12.5"],\
