@@ -3,7 +3,7 @@
   "devDependencies": {
     "@changesets/cli": "^2.29.5",
     "@types/bcrypt": "^5.0.2",
-    "@types/node": "^24.0.9",
+    "@types/node": "^24.2.1",
     "bcrypt": "^6.0.0",
     "chalk": "^4.1.2",
     "dotenv": "^17.0.1",
