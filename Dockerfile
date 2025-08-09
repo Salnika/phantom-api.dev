@@ -77,9 +77,13 @@ COPY --from=builder --chown=phantom:phantom /app/package.json ./package.json
 RUN mkdir -p /app/data /app/logs && \
     chown -R phantom:phantom /app/data /app/logs
 
-# Install production dependencies (en root pour éviter les problèmes de permissions)
-WORKDIR /app/phantom-api-backend
-RUN npm install --production --omit=dev
+# Enable corepack for yarn support
+RUN corepack enable
+
+# Install production dependencies using yarn (en root pour éviter les problèmes de permissions)
+WORKDIR /app
+ENV NODE_OPTIONS="--experimental-loader=/app/.pnp.loader.mjs"
+RUN yarn install --immutable --production
 
 # Change ownership après installation
 RUN chown -R phantom:phantom /app
@@ -91,4 +95,5 @@ EXPOSE 3000
 HEALTHCHECK --interval=30s --timeout=10s --start-period=40s --retries=3 \
   CMD curl -f http://localhost:3000/health || exit 1
 
+ENV NODE_OPTIONS="--experimental-loader=/app/.pnp.loader.mjs"
 CMD ["node", "dist/index.js"]
