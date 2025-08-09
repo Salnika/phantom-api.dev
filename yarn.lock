@@ -2290,7 +2290,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:*, @types/node@npm:^24.0.9":
+"@types/node@npm:*":
   version: 24.0.10
   resolution: "@types/node@npm:24.0.10"
   dependencies:
@@ -2303,6 +2303,15 @@ __metadata:
   version: 12.20.55
   resolution: "@types/node@npm:12.20.55"
   checksum: 10c0/3b190bb0410047d489c49bbaab592d2e6630de6a50f00ba3d7d513d59401d279972a8f5a598b5bb8ddc1702f8a2f4ec57a65d93852f9c329639738e7053637d1
+  languageName: node
+  linkType: hard
+
+"@types/node@npm:^24.2.1":
+  version: 24.2.1
+  resolution: "@types/node@npm:24.2.1"
+  dependencies:
+    undici-types: "npm:~7.10.0"
+  checksum: 10c0/439a3c7edf88a298e0c92e46f670234070b892589c3b06e82cc86c47a7e1cf220f4a4b4736ec6ac7e4b9e1c40d7b6d443a1e22f99dd17f13f9dd15de3b32011b
   languageName: node
   linkType: hard
 
@@ -2561,7 +2570,7 @@ __metadata:
     "@radix-ui/react-select": "npm:^2.2.5"
     "@radix-ui/react-slot": "npm:^1.2.3"
     "@tailwindcss/forms": "npm:^0.5.10"
-    "@types/node": "npm:^24.0.9"
+    "@types/node": "npm:^24.2.1"
     "@types/react": "npm:^19.1.8"
     "@types/react-dom": "npm:^19.1.6"
     "@vitejs/plugin-react": "npm:4.6.0"
@@ -6007,7 +6016,7 @@ __metadata:
     "@types/express": "npm:^4.17.17"
     "@types/express-rate-limit": "npm:^6.0.2"
     "@types/jsonwebtoken": "npm:^9.0.2"
-    "@types/node": "npm:^24.0.9"
+    "@types/node": "npm:^24.2.1"
     "@types/pg": "npm:^8.11.10"
     "@types/redis": "npm:^4.0.11"
     "@types/supertest": "npm:^6.0.0"
@@ -6045,7 +6054,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "phantom-api-client@workspace:phantom-api"
   dependencies:
-    "@types/node": "npm:^24.0.9"
+    "@types/node": "npm:^24.2.1"
     axios: "npm:^1.10.0"
     chalk: "npm:^4.1.2"
     commander: "npm:^12.0.0"
@@ -6066,7 +6075,7 @@ __metadata:
   dependencies:
     "@changesets/cli": "npm:^2.29.5"
     "@types/bcrypt": "npm:^5.0.2"
-    "@types/node": "npm:^24.0.9"
+    "@types/node": "npm:^24.2.1"
     bcrypt: "npm:^6.0.0"
     chalk: "npm:^4.1.2"
     dotenv: "npm:^17.0.1"
@@ -7803,6 +7812,13 @@ __metadata:
   dependencies:
     random-bytes: "npm:~1.0.0"
   checksum: 10c0/ec96862e859fd12175f3da7fda9d1359a2cf412fd521e10837cbdc6d554774079ce252f366981df9401283841c8924782f6dbee8f82a3a81f805ed8a8584595d
+  languageName: node
+  linkType: hard
+
+"undici-types@npm:~7.10.0":
+  version: 7.10.0
+  resolution: "undici-types@npm:7.10.0"
+  checksum: 10c0/8b00ce50e235fe3cc601307f148b5e8fb427092ee3b23e8118ec0a5d7f68eca8cee468c8fc9f15cbb2cf2a3797945ebceb1cbd9732306a1d00e0a9b6afa0f635
   languageName: node
   linkType: hard
 

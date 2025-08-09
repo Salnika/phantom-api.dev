@@ -50,7 +50,7 @@ const RAW_RUNTIME_STATE =
         "packageDependencies": [\
           ["@changesets/cli", "npm:2.29.5"],\
           ["@types/bcrypt", "npm:5.0.2"],\
-          ["@types/node", "npm:24.0.10"],\
+          ["@types/node", "npm:24.2.1"],\
           ["bcrypt", "npm:6.0.0"],\
           ["chalk", "npm:4.1.2"],\
           ["dotenv", "npm:17.0.1"],\
@@ -3106,6 +3106,14 @@ const RAW_RUNTIME_STATE =
           ["undici-types", "npm:7.8.0"]\
         ],\
         "linkType": "HARD"\
+      }],\
+      ["npm:24.2.1", {\
+        "packageLocation": "./.yarn/cache/@types-node-npm-24.2.1-00ab09acd1-439a3c7edf.zip/node_modules/@types/node/",\
+        "packageDependencies": [\
+          ["@types/node", "npm:24.2.1"],\
+          ["undici-types", "npm:7.10.0"]\
+        ],\
+        "linkType": "HARD"\
       }]\
     ]],\
     ["@types/pg", [\
@@ -3460,7 +3468,7 @@ const RAW_RUNTIME_STATE =
           ["@radix-ui/react-select", "virtual:4253337b4cd30e157fb9d4ddb93d42b7428af1121c63f21457fca930fbd00d9ed15d11be45331f32e1dd585b11e6fb86d2599a3fe4a31802e79ec051db662869#npm:2.2.5"],\
           ["@radix-ui/react-slot", "virtual:4253337b4cd30e157fb9d4ddb93d42b7428af1121c63f21457fca930fbd00d9ed15d11be45331f32e1dd585b11e6fb86d2599a3fe4a31802e79ec051db662869#npm:1.2.3"],\
           ["@tailwindcss/forms", "virtual:4253337b4cd30e157fb9d4ddb93d42b7428af1121c63f21457fca930fbd00d9ed15d11be45331f32e1dd585b11e6fb86d2599a3fe4a31802e79ec051db662869#npm:0.5.10"],\
-          ["@types/node", "npm:24.0.10"],\
+          ["@types/node", "npm:24.2.1"],\
           ["@types/react", "npm:19.1.8"],\
           ["@types/react-dom", "virtual:4253337b4cd30e157fb9d4ddb93d42b7428af1121c63f21457fca930fbd00d9ed15d11be45331f32e1dd585b11e6fb86d2599a3fe4a31802e79ec051db662869#npm:19.1.6"],\
           ["@vitejs/plugin-react", "virtual:4253337b4cd30e157fb9d4ddb93d42b7428af1121c63f21457fca930fbd00d9ed15d11be45331f32e1dd585b11e6fb86d2599a3fe4a31802e79ec051db662869#npm:4.6.0"],\
@@ -6233,7 +6241,7 @@ const RAW_RUNTIME_STATE =
         "packageLocation": "./.yarn/__virtual__/knip-virtual-aa6259b850/0/cache/knip-npm-5.61.3-faa1de9466-2f8abef328.zip/node_modules/knip/",\
         "packageDependencies": [\
           ["@nodelib/fs.walk", "npm:1.2.8"],\
-          ["@types/node", "npm:24.0.10"],\
+          ["@types/node", "npm:24.2.1"],\
           ["@types/typescript", null],\
           ["fast-glob", "npm:3.3.3"],\
           ["formatly", "npm:0.2.4"],\
@@ -7405,7 +7413,7 @@ const RAW_RUNTIME_STATE =
           ["@types/express", "npm:4.17.23"],\
           ["@types/express-rate-limit", "npm:6.0.2"],\
           ["@types/jsonwebtoken", "npm:9.0.10"],\
-          ["@types/node", "npm:24.0.10"],\
+          ["@types/node", "npm:24.2.1"],\
           ["@types/pg", "npm:8.15.5"],\
           ["@types/redis", "npm:4.0.11"],\
           ["@types/supertest", "npm:6.0.3"],\
@@ -7445,7 +7453,7 @@ const RAW_RUNTIME_STATE =
       ["workspace:phantom-api", {\
         "packageLocation": "./phantom-api/",\
         "packageDependencies": [\
-          ["@types/node", "npm:24.0.10"],\
+          ["@types/node", "npm:24.2.1"],\
           ["axios", "npm:1.10.0"],\
           ["chalk", "npm:4.1.2"],\
           ["commander", "npm:12.1.0"],\
@@ -7465,7 +7473,7 @@ const RAW_RUNTIME_STATE =
         "packageDependencies": [\
           ["@changesets/cli", "npm:2.29.5"],\
           ["@types/bcrypt", "npm:5.0.2"],\
-          ["@types/node", "npm:24.0.10"],\
+          ["@types/node", "npm:24.2.1"],\
           ["bcrypt", "npm:6.0.0"],\
           ["chalk", "npm:4.1.2"],\
           ["dotenv", "npm:17.0.1"],\
@@ -9437,6 +9445,13 @@ const RAW_RUNTIME_STATE =
       }]\
     ]],\
     ["undici-types", [\
+      ["npm:7.10.0", {\
+        "packageLocation": "./.yarn/cache/undici-types-npm-7.10.0-cd8324b9eb-8b00ce50e2.zip/node_modules/undici-types/",\
+        "packageDependencies": [\
+          ["undici-types", "npm:7.10.0"]\
+        ],\
+        "linkType": "HARD"\
+      }],\
       ["npm:7.8.0", {\
         "packageLocation": "./.yarn/cache/undici-types-npm-7.8.0-86f3e2d23e-9d9d246d1d.zip/node_modules/undici-types/",\
         "packageDependencies": [\
@@ -9622,7 +9637,7 @@ const RAW_RUNTIME_STATE =
           ["@types/jiti", null],\
           ["@types/less", null],\
           ["@types/lightningcss", null],\
-          ["@types/node", "npm:24.0.10"],\
+          ["@types/node", "npm:24.2.1"],\
           ["@types/sass", null],\
           ["@types/sass-embedded", null],\
           ["@types/stylus", null],\
@@ -9764,7 +9779,7 @@ const RAW_RUNTIME_STATE =
           ["@types/edge-runtime__vm", null],\
           ["@types/happy-dom", null],\
           ["@types/jsdom", null],\
-          ["@types/node", "npm:24.0.10"],\
+          ["@types/node", "npm:24.2.1"],\
           ["@types/vitest__browser", null],\
           ["@types/vitest__ui", null],\
           ["@vitest/browser", null],\
@@ -9820,7 +9835,7 @@ const RAW_RUNTIME_STATE =
           ["@types/edge-runtime__vm", null],\
           ["@types/happy-dom", null],\
           ["@types/jsdom", null],\
-          ["@types/node", "npm:24.0.10"],\
+          ["@types/node", "npm:24.2.1"],\
           ["@types/vitest__browser", null],\
           ["@types/vitest__ui", null],\
           ["@vitest/browser", null],\
