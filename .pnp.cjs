@@ -19,7 +19,7 @@ const RAW_RUNTIME_STATE =
       "reference": "workspace:admin-interface"\
     },\
     {\
-      "name": "phantom-api",\
+      "name": "phantom-api-client",\
       "reference": "workspace:phantom-api"\
     },\
     {\
@@ -36,8 +36,8 @@ const RAW_RUNTIME_STATE =
   "pnpZipBackend": "libzip",\
   "fallbackExclusionList": [\
     ["admin-interface", ["workspace:admin-interface"]],\
-    ["phantom-api", ["workspace:phantom-api"]],\
     ["phantom-api-backend", ["workspace:phantom-api-backend"]],\
+    ["phantom-api-client", ["workspace:phantom-api"]],\
     ["phantom-api-monorepo", ["workspace:."]],\
     ["public-doc", ["workspace:public-doc"]]\
   ],\
@@ -54,13 +54,13 @@ const RAW_RUNTIME_STATE =
           ["bcrypt", "npm:6.0.0"],\
           ["chalk", "npm:4.1.2"],\
           ["dotenv", "npm:17.0.1"],\
-          ["knip", "virtual:86b7be8dd38592cba87ca3cf1abb5c0da2fddca4c831b45c5226d5764450c4ed3356411563665401336a08f50800bdcaac8524aac051e69b6ab65518e750122f#npm:5.61.3"],\
+          ["knip", "virtual:896f9be96c54671e2a764d12dd66a3c4ecec90363a4b99a53cdfb2433e3475682e845d14c63ddcdbf06d1acefddd1660a84614f14966ab898a8eeadc4720efae#npm:5.61.3"],\
           ["oxlint", "npm:1.5.0"],\
-          ["phantom-api", "workspace:phantom-api"],\
+          ["phantom-api-client", "workspace:phantom-api"],\
           ["phantom-api-monorepo", "workspace:."],\
           ["syncpack", "npm:13.0.4"],\
-          ["typedoc", "virtual:86b7be8dd38592cba87ca3cf1abb5c0da2fddca4c831b45c5226d5764450c4ed3356411563665401336a08f50800bdcaac8524aac051e69b6ab65518e750122f#npm:0.28.7"],\
-          ["typedoc-plugin-markdown", "virtual:86b7be8dd38592cba87ca3cf1abb5c0da2fddca4c831b45c5226d5764450c4ed3356411563665401336a08f50800bdcaac8524aac051e69b6ab65518e750122f#npm:4.7.0"],\
+          ["typedoc", "virtual:896f9be96c54671e2a764d12dd66a3c4ecec90363a4b99a53cdfb2433e3475682e845d14c63ddcdbf06d1acefddd1660a84614f14966ab898a8eeadc4720efae#npm:0.28.7"],\
+          ["typedoc-plugin-markdown", "virtual:896f9be96c54671e2a764d12dd66a3c4ecec90363a4b99a53cdfb2433e3475682e845d14c63ddcdbf06d1acefddd1660a84614f14966ab898a8eeadc4720efae#npm:4.7.0"],\
           ["typescript", "patch:typescript@npm%3A5.8.3#optional!builtin<compat/typescript>::version=5.8.3&hash=5786d5"]\
         ],\
         "linkType": "SOFT"\
@@ -3473,7 +3473,7 @@ const RAW_RUNTIME_STATE =
           ["date-fns", "npm:4.1.0"],\
           ["globals", "npm:16.3.0"],\
           ["jsdom", "virtual:4253337b4cd30e157fb9d4ddb93d42b7428af1121c63f21457fca930fbd00d9ed15d11be45331f32e1dd585b11e6fb86d2599a3fe4a31802e79ec051db662869#npm:26.1.0"],\
-          ["knip", "virtual:86b7be8dd38592cba87ca3cf1abb5c0da2fddca4c831b45c5226d5764450c4ed3356411563665401336a08f50800bdcaac8524aac051e69b6ab65518e750122f#npm:5.61.3"],\
+          ["knip", "virtual:896f9be96c54671e2a764d12dd66a3c4ecec90363a4b99a53cdfb2433e3475682e845d14c63ddcdbf06d1acefddd1660a84614f14966ab898a8eeadc4720efae#npm:5.61.3"],\
           ["lucide-react", "virtual:4253337b4cd30e157fb9d4ddb93d42b7428af1121c63f21457fca930fbd00d9ed15d11be45331f32e1dd585b11e6fb86d2599a3fe4a31802e79ec051db662869#npm:0.525.0"],\
           ["oxlint", "npm:1.5.0"],\
           ["pino", "npm:9.7.0"],\
@@ -6220,7 +6220,7 @@ const RAW_RUNTIME_STATE =
           ["strip-json-comments", "npm:5.0.2"],\
           ["typescript", null],\
           ["zod", "npm:3.25.74"],\
-          ["zod-validation-error", "virtual:52c4e47a1af756c3581c016437724dd5a5e123197e605dce921a7b4af2b3533a11fae8e21384c44d753eea716bc74d9d7e456af9c6f0c8febe78a352dae48df9#npm:3.5.2"]\
+          ["zod-validation-error", "virtual:aa6259b8503d49478c75bdf954304de1eeb552f83b6568d48b0d23d4e117945e0883c37f5f299a20a524c3b7f9d93bf26042037f77783fb50df340aedfd39bf6#npm:3.5.2"]\
         ],\
         "packagePeers": [\
           "@types/node",\
@@ -6229,8 +6229,8 @@ const RAW_RUNTIME_STATE =
         ],\
         "linkType": "HARD"\
       }],\
-      ["virtual:86b7be8dd38592cba87ca3cf1abb5c0da2fddca4c831b45c5226d5764450c4ed3356411563665401336a08f50800bdcaac8524aac051e69b6ab65518e750122f#npm:5.61.3", {\
-        "packageLocation": "./.yarn/__virtual__/knip-virtual-52c4e47a1a/0/cache/knip-npm-5.61.3-faa1de9466-2f8abef328.zip/node_modules/knip/",\
+      ["virtual:896f9be96c54671e2a764d12dd66a3c4ecec90363a4b99a53cdfb2433e3475682e845d14c63ddcdbf06d1acefddd1660a84614f14966ab898a8eeadc4720efae#npm:5.61.3", {\
+        "packageLocation": "./.yarn/__virtual__/knip-virtual-aa6259b850/0/cache/knip-npm-5.61.3-faa1de9466-2f8abef328.zip/node_modules/knip/",\
         "packageDependencies": [\
           ["@nodelib/fs.walk", "npm:1.2.8"],\
           ["@types/node", "npm:24.0.10"],\
@@ -6239,7 +6239,7 @@ const RAW_RUNTIME_STATE =
           ["formatly", "npm:0.2.4"],\
           ["jiti", "npm:2.4.2"],\
           ["js-yaml", "npm:4.1.0"],\
-          ["knip", "virtual:86b7be8dd38592cba87ca3cf1abb5c0da2fddca4c831b45c5226d5764450c4ed3356411563665401336a08f50800bdcaac8524aac051e69b6ab65518e750122f#npm:5.61.3"],\
+          ["knip", "virtual:896f9be96c54671e2a764d12dd66a3c4ecec90363a4b99a53cdfb2433e3475682e845d14c63ddcdbf06d1acefddd1660a84614f14966ab898a8eeadc4720efae#npm:5.61.3"],\
           ["minimist", "npm:1.2.8"],\
           ["oxc-resolver", "npm:11.5.0"],\
           ["picocolors", "npm:1.1.1"],\
@@ -6248,7 +6248,7 @@ const RAW_RUNTIME_STATE =
           ["strip-json-comments", "npm:5.0.2"],\
           ["typescript", "patch:typescript@npm%3A5.8.3#optional!builtin<compat/typescript>::version=5.8.3&hash=5786d5"],\
           ["zod", "npm:3.25.74"],\
-          ["zod-validation-error", "virtual:52c4e47a1af756c3581c016437724dd5a5e123197e605dce921a7b4af2b3533a11fae8e21384c44d753eea716bc74d9d7e456af9c6f0c8febe78a352dae48df9#npm:3.5.2"]\
+          ["zod-validation-error", "virtual:aa6259b8503d49478c75bdf954304de1eeb552f83b6568d48b0d23d4e117945e0883c37f5f299a20a524c3b7f9d93bf26042037f77783fb50df340aedfd39bf6#npm:3.5.2"]\
         ],\
         "packagePeers": [\
           "@types/node",\
@@ -7391,24 +7391,6 @@ const RAW_RUNTIME_STATE =
         "linkType": "HARD"\
       }]\
     ]],\
-    ["phantom-api", [\
-      ["workspace:phantom-api", {\
-        "packageLocation": "./phantom-api/",\
-        "packageDependencies": [\
-          ["@types/node", "npm:24.0.10"],\
-          ["axios", "npm:1.10.0"],\
-          ["chalk", "npm:4.1.2"],\
-          ["commander", "npm:12.1.0"],\
-          ["knip", "virtual:86b7be8dd38592cba87ca3cf1abb5c0da2fddca4c831b45c5226d5764450c4ed3356411563665401336a08f50800bdcaac8524aac051e69b6ab65518e750122f#npm:5.61.3"],\
-          ["oxlint", "npm:1.5.0"],\
-          ["phantom-api", "workspace:phantom-api"],\
-          ["typedoc", "virtual:86b7be8dd38592cba87ca3cf1abb5c0da2fddca4c831b45c5226d5764450c4ed3356411563665401336a08f50800bdcaac8524aac051e69b6ab65518e750122f#npm:0.28.7"],\
-          ["typedoc-plugin-markdown", "virtual:86b7be8dd38592cba87ca3cf1abb5c0da2fddca4c831b45c5226d5764450c4ed3356411563665401336a08f50800bdcaac8524aac051e69b6ab65518e750122f#npm:4.7.0"],\
-          ["typescript", "patch:typescript@npm%3A5.8.3#optional!builtin<compat/typescript>::version=5.8.3&hash=5786d5"]\
-        ],\
-        "linkType": "SOFT"\
-      }]\
-    ]],\
     ["phantom-api-backend", [\
       ["workspace:phantom-api-backend", {\
         "packageLocation": "./phantom-api-backend/",\
@@ -7441,7 +7423,7 @@ const RAW_RUNTIME_STATE =
           ["express-validator", "npm:7.2.1"],\
           ["helmet", "npm:8.1.0"],\
           ["jsonwebtoken", "npm:9.0.2"],\
-          ["knip", "virtual:86b7be8dd38592cba87ca3cf1abb5c0da2fddca4c831b45c5226d5764450c4ed3356411563665401336a08f50800bdcaac8524aac051e69b6ab65518e750122f#npm:5.61.3"],\
+          ["knip", "virtual:896f9be96c54671e2a764d12dd66a3c4ecec90363a4b99a53cdfb2433e3475682e845d14c63ddcdbf06d1acefddd1660a84614f14966ab898a8eeadc4720efae#npm:5.61.3"],\
           ["oxlint", "npm:1.5.0"],\
           ["pg", "virtual:09e1a04afd45af093cd8c29b97ddf4d19df61499634c38d0af82bb90c3d7132ade4b7fe95e3fb270962602a48f0e33defa03b58e28d078240eaec795cfcd7520#npm:8.16.3"],\
           ["phantom-api-backend", "workspace:phantom-api-backend"],\
@@ -7450,11 +7432,29 @@ const RAW_RUNTIME_STATE =
           ["redis", "npm:4.7.1"],\
           ["supertest", "npm:7.1.1"],\
           ["tsx", "npm:4.20.3"],\
-          ["typedoc", "virtual:86b7be8dd38592cba87ca3cf1abb5c0da2fddca4c831b45c5226d5764450c4ed3356411563665401336a08f50800bdcaac8524aac051e69b6ab65518e750122f#npm:0.28.7"],\
-          ["typedoc-plugin-markdown", "virtual:86b7be8dd38592cba87ca3cf1abb5c0da2fddca4c831b45c5226d5764450c4ed3356411563665401336a08f50800bdcaac8524aac051e69b6ab65518e750122f#npm:4.7.0"],\
+          ["typedoc", "virtual:896f9be96c54671e2a764d12dd66a3c4ecec90363a4b99a53cdfb2433e3475682e845d14c63ddcdbf06d1acefddd1660a84614f14966ab898a8eeadc4720efae#npm:0.28.7"],\
+          ["typedoc-plugin-markdown", "virtual:896f9be96c54671e2a764d12dd66a3c4ecec90363a4b99a53cdfb2433e3475682e845d14c63ddcdbf06d1acefddd1660a84614f14966ab898a8eeadc4720efae#npm:4.7.0"],\
           ["typescript", "patch:typescript@npm%3A5.8.3#optional!builtin<compat/typescript>::version=5.8.3&hash=5786d5"],\
           ["vitest", "virtual:09e1a04afd45af093cd8c29b97ddf4d19df61499634c38d0af82bb90c3d7132ade4b7fe95e3fb270962602a48f0e33defa03b58e28d078240eaec795cfcd7520#npm:3.2.4"],\
           ["zod", "npm:3.25.74"]\
+        ],\
+        "linkType": "SOFT"\
+      }]\
+    ]],\
+    ["phantom-api-client", [\
+      ["workspace:phantom-api", {\
+        "packageLocation": "./phantom-api/",\
+        "packageDependencies": [\
+          ["@types/node", "npm:24.0.10"],\
+          ["axios", "npm:1.10.0"],\
+          ["chalk", "npm:4.1.2"],\
+          ["commander", "npm:12.1.0"],\
+          ["knip", "virtual:896f9be96c54671e2a764d12dd66a3c4ecec90363a4b99a53cdfb2433e3475682e845d14c63ddcdbf06d1acefddd1660a84614f14966ab898a8eeadc4720efae#npm:5.61.3"],\
+          ["oxlint", "npm:1.5.0"],\
+          ["phantom-api-client", "workspace:phantom-api"],\
+          ["typedoc", "virtual:896f9be96c54671e2a764d12dd66a3c4ecec90363a4b99a53cdfb2433e3475682e845d14c63ddcdbf06d1acefddd1660a84614f14966ab898a8eeadc4720efae#npm:0.28.7"],\
+          ["typedoc-plugin-markdown", "virtual:896f9be96c54671e2a764d12dd66a3c4ecec90363a4b99a53cdfb2433e3475682e845d14c63ddcdbf06d1acefddd1660a84614f14966ab898a8eeadc4720efae#npm:4.7.0"],\
+          ["typescript", "patch:typescript@npm%3A5.8.3#optional!builtin<compat/typescript>::version=5.8.3&hash=5786d5"]\
         ],\
         "linkType": "SOFT"\
       }]\
@@ -7469,13 +7469,13 @@ const RAW_RUNTIME_STATE =
           ["bcrypt", "npm:6.0.0"],\
           ["chalk", "npm:4.1.2"],\
           ["dotenv", "npm:17.0.1"],\
-          ["knip", "virtual:86b7be8dd38592cba87ca3cf1abb5c0da2fddca4c831b45c5226d5764450c4ed3356411563665401336a08f50800bdcaac8524aac051e69b6ab65518e750122f#npm:5.61.3"],\
+          ["knip", "virtual:896f9be96c54671e2a764d12dd66a3c4ecec90363a4b99a53cdfb2433e3475682e845d14c63ddcdbf06d1acefddd1660a84614f14966ab898a8eeadc4720efae#npm:5.61.3"],\
           ["oxlint", "npm:1.5.0"],\
-          ["phantom-api", "workspace:phantom-api"],\
+          ["phantom-api-client", "workspace:phantom-api"],\
           ["phantom-api-monorepo", "workspace:."],\
           ["syncpack", "npm:13.0.4"],\
-          ["typedoc", "virtual:86b7be8dd38592cba87ca3cf1abb5c0da2fddca4c831b45c5226d5764450c4ed3356411563665401336a08f50800bdcaac8524aac051e69b6ab65518e750122f#npm:0.28.7"],\
-          ["typedoc-plugin-markdown", "virtual:86b7be8dd38592cba87ca3cf1abb5c0da2fddca4c831b45c5226d5764450c4ed3356411563665401336a08f50800bdcaac8524aac051e69b6ab65518e750122f#npm:4.7.0"],\
+          ["typedoc", "virtual:896f9be96c54671e2a764d12dd66a3c4ecec90363a4b99a53cdfb2433e3475682e845d14c63ddcdbf06d1acefddd1660a84614f14966ab898a8eeadc4720efae#npm:0.28.7"],\
+          ["typedoc-plugin-markdown", "virtual:896f9be96c54671e2a764d12dd66a3c4ecec90363a4b99a53cdfb2433e3475682e845d14c63ddcdbf06d1acefddd1660a84614f14966ab898a8eeadc4720efae#npm:4.7.0"],\
           ["typescript", "patch:typescript@npm%3A5.8.3#optional!builtin<compat/typescript>::version=5.8.3&hash=5786d5"]\
         ],\
         "linkType": "SOFT"\
@@ -9367,15 +9367,15 @@ const RAW_RUNTIME_STATE =
         ],\
         "linkType": "SOFT"\
       }],\
-      ["virtual:86b7be8dd38592cba87ca3cf1abb5c0da2fddca4c831b45c5226d5764450c4ed3356411563665401336a08f50800bdcaac8524aac051e69b6ab65518e750122f#npm:0.28.7", {\
-        "packageLocation": "./.yarn/__virtual__/typedoc-virtual-9af8bed98b/0/cache/typedoc-npm-0.28.7-01bffbbb89-30c942fa28.zip/node_modules/typedoc/",\
+      ["virtual:896f9be96c54671e2a764d12dd66a3c4ecec90363a4b99a53cdfb2433e3475682e845d14c63ddcdbf06d1acefddd1660a84614f14966ab898a8eeadc4720efae#npm:0.28.7", {\
+        "packageLocation": "./.yarn/__virtual__/typedoc-virtual-5b61b0313a/0/cache/typedoc-npm-0.28.7-01bffbbb89-30c942fa28.zip/node_modules/typedoc/",\
         "packageDependencies": [\
           ["@gerrit0/mini-shiki", "npm:3.7.0"],\
           ["@types/typescript", null],\
           ["lunr", "npm:2.3.9"],\
           ["markdown-it", "npm:14.1.0"],\
           ["minimatch", "npm:9.0.5"],\
-          ["typedoc", "virtual:86b7be8dd38592cba87ca3cf1abb5c0da2fddca4c831b45c5226d5764450c4ed3356411563665401336a08f50800bdcaac8524aac051e69b6ab65518e750122f#npm:0.28.7"],\
+          ["typedoc", "virtual:896f9be96c54671e2a764d12dd66a3c4ecec90363a4b99a53cdfb2433e3475682e845d14c63ddcdbf06d1acefddd1660a84614f14966ab898a8eeadc4720efae#npm:0.28.7"],\
           ["typescript", "patch:typescript@npm%3A5.8.3#optional!builtin<compat/typescript>::version=5.8.3&hash=5786d5"],\
           ["yaml", "npm:2.8.0"]\
         ],\
@@ -9394,12 +9394,12 @@ const RAW_RUNTIME_STATE =
         ],\
         "linkType": "SOFT"\
       }],\
-      ["virtual:86b7be8dd38592cba87ca3cf1abb5c0da2fddca4c831b45c5226d5764450c4ed3356411563665401336a08f50800bdcaac8524aac051e69b6ab65518e750122f#npm:4.7.0", {\
-        "packageLocation": "./.yarn/__virtual__/typedoc-plugin-markdown-virtual-67888ea667/0/cache/typedoc-plugin-markdown-npm-4.7.0-cab25d8c3f-066cb8a0f9.zip/node_modules/typedoc-plugin-markdown/",\
+      ["virtual:896f9be96c54671e2a764d12dd66a3c4ecec90363a4b99a53cdfb2433e3475682e845d14c63ddcdbf06d1acefddd1660a84614f14966ab898a8eeadc4720efae#npm:4.7.0", {\
+        "packageLocation": "./.yarn/__virtual__/typedoc-plugin-markdown-virtual-fe35c66dc1/0/cache/typedoc-plugin-markdown-npm-4.7.0-cab25d8c3f-066cb8a0f9.zip/node_modules/typedoc-plugin-markdown/",\
         "packageDependencies": [\
           ["@types/typedoc", null],\
-          ["typedoc", "virtual:86b7be8dd38592cba87ca3cf1abb5c0da2fddca4c831b45c5226d5764450c4ed3356411563665401336a08f50800bdcaac8524aac051e69b6ab65518e750122f#npm:0.28.7"],\
-          ["typedoc-plugin-markdown", "virtual:86b7be8dd38592cba87ca3cf1abb5c0da2fddca4c831b45c5226d5764450c4ed3356411563665401336a08f50800bdcaac8524aac051e69b6ab65518e750122f#npm:4.7.0"]\
+          ["typedoc", "virtual:896f9be96c54671e2a764d12dd66a3c4ecec90363a4b99a53cdfb2433e3475682e845d14c63ddcdbf06d1acefddd1660a84614f14966ab898a8eeadc4720efae#npm:0.28.7"],\
+          ["typedoc-plugin-markdown", "virtual:896f9be96c54671e2a764d12dd66a3c4ecec90363a4b99a53cdfb2433e3475682e845d14c63ddcdbf06d1acefddd1660a84614f14966ab898a8eeadc4720efae#npm:4.7.0"]\
         ],\
         "packagePeers": [\
           "@types/typedoc",\
@@ -10088,12 +10088,12 @@ const RAW_RUNTIME_STATE =
         ],\
         "linkType": "SOFT"\
       }],\
-      ["virtual:52c4e47a1af756c3581c016437724dd5a5e123197e605dce921a7b4af2b3533a11fae8e21384c44d753eea716bc74d9d7e456af9c6f0c8febe78a352dae48df9#npm:3.5.2", {\
-        "packageLocation": "./.yarn/__virtual__/zod-validation-error-virtual-f05ad98462/0/cache/zod-validation-error-npm-3.5.2-ff101b0599-da50926ec9.zip/node_modules/zod-validation-error/",\
+      ["virtual:aa6259b8503d49478c75bdf954304de1eeb552f83b6568d48b0d23d4e117945e0883c37f5f299a20a524c3b7f9d93bf26042037f77783fb50df340aedfd39bf6#npm:3.5.2", {\
+        "packageLocation": "./.yarn/__virtual__/zod-validation-error-virtual-202d84f88d/0/cache/zod-validation-error-npm-3.5.2-ff101b0599-da50926ec9.zip/node_modules/zod-validation-error/",\
         "packageDependencies": [\
           ["@types/zod", null],\
           ["zod", "npm:3.25.74"],\
-          ["zod-validation-error", "virtual:52c4e47a1af756c3581c016437724dd5a5e123197e605dce921a7b4af2b3533a11fae8e21384c44d753eea716bc74d9d7e456af9c6f0c8febe78a352dae48df9#npm:3.5.2"]\
+          ["zod-validation-error", "virtual:aa6259b8503d49478c75bdf954304de1eeb552f83b6568d48b0d23d4e117945e0883c37f5f299a20a524c3b7f9d93bf26042037f77783fb50df340aedfd39bf6#npm:3.5.2"]\
         ],\
         "packagePeers": [\
           "@types/zod",\
