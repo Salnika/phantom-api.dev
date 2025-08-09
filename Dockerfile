@@ -8,7 +8,6 @@ RUN apt-get update && apt-get install -y python3 make g++ && rm -rf /var/lib/apt
 
 # Copie du coeur monorepo (racine)
 COPY package.json yarn.lock .yarnrc.yml ./
-COPY .yarn/ .yarn/
 
 # Copie les package.json de TOUS les workspaces déclarés (sinon Yarn bloque)
 COPY phantom-api-backend/package.json ./phantom-api-backend/
@@ -36,11 +35,13 @@ COPY --from=deps /app/phantom-api-backend/package.json ./phantom-api-backend/
 COPY --from=deps /app/phantom-api/package.json ./phantom-api/
 COPY --from=deps /app/admin-interface/package.json ./admin-interface/
 
-# Copie le code source du workspace à builder (ici : backend seulement)
+# Copie le code source des workspaces à builder
 COPY phantom-api-backend/ ./phantom-api-backend/
+COPY admin-interface/ ./admin-interface/
 
-# Build du backend
-RUN yarn workspace phantom-api-backend build
+# Build des projets nécessaires à l'image
+RUN yarn workspace phantom-api-backend build \
+ && yarn workspace admin-interface build
 
 # -------- STAGE 3 : Runtime production allégé --------
 FROM node:22-slim AS runner
@@ -57,8 +58,8 @@ RUN addgroup --system --gid 1001 phantom && \
 COPY --from=builder --chown=phantom:phantom /app/phantom-api-backend/dist ./phantom-api-backend/dist
 COPY --from=builder --chown=phantom:phantom /app/phantom-api-backend/package.json ./phantom-api-backend/package.json
 
-# Copie l'admin interface buildée localement
-COPY --chown=phantom:phantom admin-interface/dist ./admin-interface/dist
+# Copie l'admin interface buildée depuis l'étape builder
+COPY --from=builder --chown=phantom:phantom /app/admin-interface/dist ./admin-interface/dist
 
 # Copie infra Yarn PnP pour la résolution runtime
 COPY --from=builder --chown=phantom:phantom /app/.pnp.cjs ./.pnp.cjs
