@@ -53,7 +53,7 @@ const RAW_RUNTIME_STATE =
           ["@types/node", "npm:24.0.10"],\
           ["bcrypt", "npm:6.0.0"],\
           ["chalk", "npm:4.1.2"],\
-          ["dotenv", "npm:17.0.1"],\
+          ["dotenv", "npm:17.2.1"],\
           ["knip", "virtual:896f9be96c54671e2a764d12dd66a3c4ecec90363a4b99a53cdfb2433e3475682e845d14c63ddcdbf06d1acefddd1660a84614f14966ab898a8eeadc4720efae#npm:5.61.3"],\
           ["oxlint", "npm:1.5.0"],\
           ["phantom-api-client", "workspace:phantom-api"],\
@@ -4620,10 +4620,10 @@ const RAW_RUNTIME_STATE =
       }]\
     ]],\
     ["dotenv", [\
-      ["npm:17.0.1", {\
-        "packageLocation": "./.yarn/cache/dotenv-npm-17.0.1-1b898b78c6-79d3381832.zip/node_modules/dotenv/",\
+      ["npm:17.2.1", {\
+        "packageLocation": "./.yarn/cache/dotenv-npm-17.2.1-33fbb0afbc-918dd2f9d8.zip/node_modules/dotenv/",\
         "packageDependencies": [\
-          ["dotenv", "npm:17.0.1"]\
+          ["dotenv", "npm:17.2.1"]\
         ],\
         "linkType": "HARD"\
       }]\
@@ -7416,7 +7416,7 @@ const RAW_RUNTIME_STATE =
           ["cookie-parser", "npm:1.4.7"],\
           ["cors", "npm:2.8.5"],\
           ["csurf", "npm:1.11.0"],\
-          ["dotenv", "npm:17.0.1"],\
+          ["dotenv", "npm:17.2.1"],\
           ["esbuild", "npm:0.25.5"],\
           ["express", "npm:4.21.2"],\
           ["express-rate-limit", "virtual:09e1a04afd45af093cd8c29b97ddf4d19df61499634c38d0af82bb90c3d7132ade4b7fe95e3fb270962602a48f0e33defa03b58e28d078240eaec795cfcd7520#npm:7.5.1"],\
@@ -7468,7 +7468,7 @@ const RAW_RUNTIME_STATE =
           ["@types/node", "npm:24.0.10"],\
           ["bcrypt", "npm:6.0.0"],\
           ["chalk", "npm:4.1.2"],\
-          ["dotenv", "npm:17.0.1"],\
+          ["dotenv", "npm:17.2.1"],\
           ["knip", "virtual:896f9be96c54671e2a764d12dd66a3c4ecec90363a4b99a53cdfb2433e3475682e845d14c63ddcdbf06d1acefddd1660a84614f14966ab898a8eeadc4720efae#npm:5.61.3"],\
           ["oxlint", "npm:1.5.0"],\
           ["phantom-api-client", "workspace:phantom-api"],\
