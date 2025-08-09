@@ -21,7 +21,7 @@
     "zod": "^3.23.8"
   },
   "devDependencies": {
-    "@testing-library/jest-dom": "^6.6.3",
+    "@testing-library/jest-dom": "^6.6.4",
     "@types/bcryptjs": "^3.0.0",
     "@types/better-sqlite3": "^7.6.4",
     "@types/commander": "^2.12.2",
