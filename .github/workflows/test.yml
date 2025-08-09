@@ -101,7 +101,7 @@ jobs:
       # La partie Codecov reste spécifique, on la garde avec une condition
       - name: Upload coverage to Codecov
         if: matrix.workspace.name == 'phantom-api-backend' && fromJson(matrix.workspace.scripts)['test:coverage']
-        uses: codecov/codecov-action@v4
+        uses: codecov/codecov-action@v5
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
           file: ./${{ matrix.workspace.location }}/coverage/lcov.info
