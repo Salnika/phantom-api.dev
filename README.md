@@ -17,6 +17,8 @@
 
 A dynamic backend system that automatically creates API endpoints, database tables, and validation schemas based on api call from frontend.
 
+[Complete Documentation](https://salnika.github.io/phantom-api.dev/)
+
 ## Features
 
 - **Dynamic API**: Single route `/api/:resource/:action` handles all operations
@@ -42,9 +44,6 @@ A dynamic backend system that automatically creates API endpoints, database tabl
 │   └── data/            # SQLite database files
 ├── admin-interface/      # admin (React admin panel)
 ├── phantom-api/          # client (NPM package for frontend integration)
-├── demo/                 # Vite React demo application
-├── website/             # Marketing website
-├── public-doc/          # MkDocs documentation
 ├── ecosystem.config.js  # PM2 process configuration
 ├── Dockerfile           # Backend containerization
 └── docker-compose.yml   # Multi-service orchestration
