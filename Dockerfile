@@ -41,7 +41,9 @@ COPY phantom-api-backend/ ./phantom-api-backend/
 COPY admin-interface/ ./admin-interface/
 
 # Build des projets nécessaires à l'image
-ENV NODE_OPTIONS="--experimental-loader=./.pnp.loader.mjs"
+# Utilise un chemin absolu pour le loader PnP, car les scripts workspace
+# s'exécutent depuis le dossier du package (sinon ./ pointe vers le workspace)
+ENV NODE_OPTIONS="--experimental-loader=/app/.pnp.loader.mjs"
 RUN yarn workspace phantom-api-backend build \
  && yarn workspace admin-interface build
 
