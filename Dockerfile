@@ -1,5 +1,5 @@
 # -------- STAGE 1 : Dépendances install (Yarn 4 PnP, sans node_modules) --------
-FROM node:22-slim AS deps
+FROM node:24-slim AS deps
 WORKDIR /app
 
 # Pré-requis build natifs
@@ -18,7 +18,7 @@ COPY admin-interface/package.json ./admin-interface/
 RUN yarn install
 
 # -------- STAGE 2 : Build du workspace cible --------
-FROM node:22-slim AS builder
+FROM node:24-slim AS builder
 WORKDIR /app
 
 RUN corepack enable
@@ -48,7 +48,7 @@ RUN yarn workspace phantom-api-backend build \
  && yarn workspace admin-interface build
 
 # -------- STAGE 3 : Runtime production allégé --------
-FROM node:22-slim AS runner
+FROM node:24-slim AS runner
 WORKDIR /app
 
 # Santé + sécurité + dépendances build
