@@ -83,7 +83,7 @@ RUN corepack enable
 # Install production dependencies using yarn (en root pour éviter les problèmes de permissions)
 WORKDIR /app
 ENV NODE_OPTIONS="--experimental-loader=/app/.pnp.loader.mjs"
-RUN yarn install --immutable --production
+RUN yarn workspaces focus phantom-api-backend --production
 
 # Change ownership après installation
 RUN chown -R phantom:phantom /app
