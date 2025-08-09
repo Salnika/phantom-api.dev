@@ -8,7 +8,7 @@
     "chalk": "^4.1.2",
     "dotenv": "^17.0.1",
     "knip": "^5.61.3",
-    "oxlint": "^1.0.0",
+    "oxlint": "^1.11.1",
     "phantom-api-client": "workspace:*",
     "syncpack": "^13.0.4",
     "typedoc": "^0.28.7",
