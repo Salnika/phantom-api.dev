@@ -1,39 +1,42 @@
 <div align="center">
-  <img src="https://raw.githubusercontent.com/salnika/phantom-api.dev/main/assets/logo-blue.svg" alt="Phantom API Logo" width="120" height="120">
+  <img src="../assets/logo-white-and-black.svg" alt="Phantom API Logo" width="220" />
   
   # Phantom API Client
-  
-  **Dynamic backend system that builds type-safe, schema-based APIs with zero boilerplate**
-  
+
+  **The official TypeScript/JavaScript client for Phantom API - Create powerful backends without the complexity.**
+
   [![npm version](https://img.shields.io/npm/v/phantom-api-client.svg)](https://www.npmjs.com/package/phantom-api-client)
   [![npm downloads](https://img.shields.io/npm/dm/phantom-api-client.svg)](https://www.npmjs.com/package/phantom-api-client)
   [![GitHub stars](https://img.shields.io/github/stars/salnika/phantom-api.dev.svg)](https://github.com/salnika/phantom-api.dev)
-  [![License: CC BY-NC-SA 4.0](https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-blue.svg)](https://creativecommons.org/licenses/by-nc-sa/4.0/)
-  [![Documentation](https://img.shields.io/badge/docs-phantom--api.dev-blue)](https://phantom-api.dev)
+  [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+  [![TypeScript Ready](https://img.shields.io/badge/TypeScript-Ready-blue.svg)](https://www.typescriptlang.org/)
 </div>
 
 ## TL;DR
 
-**Phantom API is a dynamic backend system that builds type-safe, schema-based APIs with zero boilerplate.**
+**It creates your backend by calling it** 🪄
 
-Skip writing database schemas, migrations, validation rules, and REST endpoints. Just call your API and watch it build itself in real-time.
+No need to write schemas, migrations, or endpoints. Just call your API and watch it build itself in real-time!
 
 ## Quick Example
 
 ```typescript
 import { createClient } from 'phantom-api-client';
 
-const client = createClient({ baseURL: 'https://api.example.com' });
-const tasks = client.resource('Task');
+const client = createClient();
+client.setEndpoint('https://your-phantom-api.com');
 
-// 🎯 This single call creates the database table, validation schema, and REST endpoints
-await tasks.create({ name: 'Write README', done: false, priority: 'high' });
+const users = client.resource('users');
 
-// ✅ Table "tasks" now exists with columns: id, name, done, priority, created_at
-const list = await tasks.read({ where: { done: false } });
+// 🎯 This single call creates the entire backend infrastructure
+await users.create({
+  name: 'John Doe',
+  email: 'john@example.com'
+});
+
+// ✨ Database table, validation rules, and REST endpoints are now live!
+const allUsers = await users.getAll();
 ```
-
-[→ See complete examples](https://phantom-api.dev/docs/examples)
 
 ## Installation
 
@@ -45,193 +48,192 @@ yarn add phantom-api-client
 bun add phantom-api-client
 ```
 
-## Documentation
+## ✨ Features
 
-📚 **[Full documentation →](https://phantom-api.dev)**
+- 🪄 **Magic Backend Creation**: Your backend builds itself as you call it - no setup required!
+- 🚀 **Zero Boilerplate**: Skip the boring stuff, just start building features
+- 🔐 **Authentication Ready**: JWT tokens and sessions work out of the box  
+- 📊 **Type Safety**: TypeScript loves it, and so will you
+- 🎯 **Smart Queries**: Filter, sort, paginate like you're reading your mind
+- ⚡ **Lightning Fast**: Optimized for speed, built for scale
+- 🛠️ **CLI Superpowers**: Migrations and seeds that actually make sense
+- 💝 **Developer Joy**: Because coding should be fun, not frustrating
 
-## Why Phantom API?
+## 🚀 Quick Start
 
-🧠 **Data-first**: Auto-generates tables, validations, and routes from your actual data  
-🔐 **Fine-grained permissions**: Built-in policy system with role-based and attribute-based access control  
-⚡️ **Fast to deploy**: No backend code required - works with any frontend framework  
-🧱 **Works everywhere**: Next.js, React Native, Vue, Svelte, vanilla JavaScript  
-🎯 **Type-safe**: Full TypeScript support with auto-generated types  
-🔄 **Real-time**: Built-in WebSocket support for live data updates  
-
-## Feature Comparison
-
-| Tool | Backend Code Needed | Permissions | Hosted | Custom Logic |
-|------|-------------------|-------------|---------|--------------|
-| **Phantom** | ❌ None | ✅ Built-in | ✅ | ✅ With Hooks |
-| Supabase | ✅ SQL/Edge Functions | ⚠️ Limited | ✅ | ✅ |
-| Strapi | ✅ JS/TS | ✅ Advanced | ❌ | ✅ |
-| Hasura | ❌ GraphQL Config | ⚠️ Complex | ✅ | ⚠️ Indirect |
-| Firebase | ✅ Cloud Functions | ⚠️ Basic Rules | ✅ | ⚠️ Limited |
-
-## Core Features
-
-### 🚀 Dynamic Resource Creation
+### Basic Usage
 
 ```typescript
-// Creates table, schema, and endpoints automatically
-const users = client.resource('User');
-const posts = client.resource('Post'); 
-const comments = client.resource('Comment');
+import { createClient } from 'phantom-api-client';
 
-// Relationships detected from field names
-await posts.create({
-  title: 'Hello World',
-  content: 'My first post!',
-  authorId: 'user_123'  // 👈 Auto-creates foreign key to User table
+// Initialize the client (yes, it's this simple)
+const client = createClient();
+client.setEndpoint('https://your-phantom-api.com');
+
+// Grab a resource (it doesn't exist yet, but it will!)
+const users = client.resource('users');
+
+// Create a user (and boom! 💥 The entire backend comes to life)
+await users.create({
+  name: 'John Doe',
+  email: 'john@example.com'
 });
+
+// Now you can do all the usual stuff
+const allUsers = await users.getAll();
+const user = await users.get(1);
+await users.update(1, { name: 'Jane Doe' });
+await users.delete(1);
 ```
 
-### 🔍 Advanced Querying
+### Advanced Usage (aka the cool stuff 😎)
 
 ```typescript
-const posts = await client.resource('Post').read({
-  where: {
-    published: true,
-    createdAt: { gte: '2024-01-01' },
-    tags: { contains: 'javascript' }
-  },
-  populate: ['author', 'comments'],
-  sort: ['-createdAt'],
-  limit: 20
+// Query like a pro
+const activeUsers = await users.getAll({
+  filters: { status: 'active' },
+  sort: 'created_at:desc',
+  limit: 10,
+  offset: 0
 });
-```
 
-### ⚡ Batch Operations
+// Relationships? We got you covered
+const posts = client.resource('posts');
+const userPosts = await posts.getAll({
+  filters: { user_id: 1 }
+});
 
-```typescript
-const results = await client.batch([
-  { resource: 'User', action: 'create', data: { name: 'Alice' } },
-  { resource: 'User', action: 'create', data: { name: 'Bob' } },
-  { resource: 'Post', action: 'create', data: { title: 'Hello', authorId: 'user_123' } }
+// Batch operations because why not?
+await users.createMany([
+  { name: 'User 1', email: 'user1@example.com' },
+  { name: 'User 2', email: 'user2@example.com' }
 ]);
 ```
 
-### 🎯 Type Safety
+### Authentication (secure by default 🔒)
 
 ```typescript
-interface User {
-  id: string;
-  email: string;
-  name: string;
-  createdAt: Date;
-}
+// Just plug in your token
+client.setAuth('your-jwt-token');
 
-const user = await client.resource<User>('User').create({
-  email: 'john@example.com',
-  name: 'John Doe'
+// Or do it all at once
+const client = createClient({
+  endpoint: 'https://your-phantom-api.com',
+  token: 'your-jwt-token'
 });
-// user is fully typed! ✅
 ```
 
-## Real-World Usage
+## 🛠️ CLI Tools (for when you want to feel like a wizard 🧙‍♂️)
+
+### Migration CLI
+
+```bash
+# Generate a new migration
+phantom-migration generate create_users_table
+
+# Run migrations
+phantom-migration up
+
+# Rollback migrations
+phantom-migration down
+```
+
+### Seed CLI
+
+```bash
+# Create seed data
+phantom-seed create users
+
+# Run seeds
+phantom-seed run
+```
+
+## 📖 API Reference
+
+### Client Methods
+
+- `createClient(options?)` - Create a new Phantom API client
+- `setEndpoint(url)` - Set the API endpoint URL
+- `resource(name)` - Get a resource instance
+- `setAuth(token)` - Set authentication token
+
+### Resource Methods
+
+- `getAll(options?)` - Fetch all records
+- `get(id)` - Fetch single record by ID
+- `create(data)` - Create new record
+- `createMany(data[])` - Create multiple records
+- `update(id, data)` - Update existing record
+- `delete(id)` - Delete record
+- `count(filters?)` - Count records
+
+### Query Options
+
+```typescript
+interface QueryOptions {
+  filters?: Record<string, any>;
+  sort?: string;
+  limit?: number;
+  offset?: number;
+  include?: string[];
+}
+```
+
+## Real-World Examples
 
 ### E-commerce Store
 ```typescript
-// Product catalog with categories and inventory
-await client.resource('Product').create({
+// Product catalog with categories
+await client.resource('products').create({
   name: 'iPhone 15 Pro',
   price: 999.99,
-  categoryId: 'electronics',
-  inStock: true,
-  variants: ['128GB', '256GB', '512GB']
-});
-```
-
-### Social Media App
-```typescript
-// User posts with likes and comments
-await client.resource('Post').create({
-  content: 'Building with Phantom API! 🚀',
-  authorId: 'user_123',
-  tags: ['#phantomapi', '#nocode']
-});
-
-await client.resource('Like').create({
-  postId: 'post_456',
-  userId: 'user_789'
+  category_id: 'electronics',
+  in_stock: true
 });
 ```
 
 ### Task Management
 ```typescript
 // Project tasks with assignments
-await client.resource('Task').create({
+await client.resource('tasks').create({
   title: 'Design new homepage',
-  description: 'Create wireframes and mockups',
-  assigneeId: 'user_456',
-  projectId: 'proj_123',
+  assignee_id: 'user_456',
+  project_id: 'proj_123',
   status: 'in_progress',
-  priority: 'high',
-  dueDate: '2024-02-15'
+  priority: 'high'
 });
 ```
 
-## Authentication & Security
+## Environment Management
 
-```typescript
-// JWT authentication
-const client = createClient({
-  baseURL: 'https://api.yourapp.com',
-  token: 'your-jwt-token'
-});
-```
-
-## Migration & Deployment
-
-### CLI Tools
-```bash
-# Preview database changes
-phantom-migration --preview
-
-# Apply migrations
-phantom-migration --apply
-
-# Seed development data
-phantom-seed --file ./seeds/demo.json
-```
-
-### Environment Management
 ```typescript
 const devClient = createClient({
-  baseURL: 'http://localhost:3000'
+  endpoint: 'http://localhost:3000'
 });
 
 const prodClient = createClient({
-  baseURL: 'https://api.yourapp.com',
+  endpoint: 'https://api.yourapp.com',
   token: process.env.PHANTOM_API_TOKEN
 });
 ```
 
-## Roadmap / Contributing
+## 🤝 Contributing
 
-We're actively developing Phantom API! Here's what's coming:
+We welcome contributions! Please see our [Contributing Guide](../CONTRIBUTING.md) for details.
 
-- 🔄 Real-time subscriptions
-- 📊 Advanced analytics dashboard  
-- 🤖 AI-powered schema suggestions
-- 📱 Mobile SDKs (React Native, Flutter)
+## 📄 License
 
-**Want to contribute?** Check out our [GitHub Issues](https://github.com/salnika/phantom-api.dev/issues) or join our community!
+Licensed under the [MIT License](LICENSE).
 
-## Community & Support
+## 🆘 Support
 
-- 📖 **Documentation**: [phantom-api.dev](https://phantom-api.dev)
-- 💬 **Discord**: [Join our community](https://discord.gg/phantom-api)
-- 🐛 **Issues**: [GitHub Issues](https://github.com/salnika/phantom-api.dev/issues)
-- 🔄 **Updates**: Follow [@PhantomAPI](https://twitter.com/phantomapi) on Twitter
-
-## License
-
-CC BY-NC-SA 4.0 – see the LICENSE file in the repository root.
+- 📖 [Documentation](https://github.com/salnika/phantom-api.dev)
+- 🐛 [Issue Tracker](https://github.com/salnika/phantom-api.dev/issues)
+- 💬 [Discussions](https://github.com/salnika/phantom-api.dev/discussions)
 
 ---
 
 <div align="center">
   <strong>Built with ❤️ by the Phantom API team</strong><br>
-  <em>Stop writing boilerplate. Start building features.</em>
+  <em>Connect to powerful backends without the complexity.</em>
 </div>
