@@ -59,7 +59,7 @@ const RAW_RUNTIME_STATE =
           ["phantom-api-client", "workspace:phantom-api"],\
           ["phantom-api-monorepo", "workspace:."],\
           ["syncpack", "npm:13.0.4"],\
-          ["typedoc", "virtual:896f9be96c54671e2a764d12dd66a3c4ecec90363a4b99a53cdfb2433e3475682e845d14c63ddcdbf06d1acefddd1660a84614f14966ab898a8eeadc4720efae#npm:0.28.7"],\
+          ["typedoc", "virtual:896f9be96c54671e2a764d12dd66a3c4ecec90363a4b99a53cdfb2433e3475682e845d14c63ddcdbf06d1acefddd1660a84614f14966ab898a8eeadc4720efae#npm:0.28.10"],\
           ["typedoc-plugin-markdown", "virtual:896f9be96c54671e2a764d12dd66a3c4ecec90363a4b99a53cdfb2433e3475682e845d14c63ddcdbf06d1acefddd1660a84614f14966ab898a8eeadc4720efae#npm:4.7.0"],\
           ["typescript", "patch:typescript@npm%3A5.8.3#optional!builtin<compat/typescript>::version=5.8.3&hash=5786d5"]\
         ],\
@@ -1046,14 +1046,14 @@ const RAW_RUNTIME_STATE =
       }]\
     ]],\
     ["@gerrit0/mini-shiki", [\
-      ["npm:3.7.0", {\
-        "packageLocation": "./.yarn/cache/@gerrit0-mini-shiki-npm-3.7.0-56e2ebc982-eb3f4900d8.zip/node_modules/@gerrit0/mini-shiki/",\
+      ["npm:3.9.2", {\
+        "packageLocation": "./.yarn/cache/@gerrit0-mini-shiki-npm-3.9.2-0b8fef75e0-f2e600de95.zip/node_modules/@gerrit0/mini-shiki/",\
         "packageDependencies": [\
-          ["@gerrit0/mini-shiki", "npm:3.7.0"],\
-          ["@shikijs/engine-oniguruma", "npm:3.7.0"],\
-          ["@shikijs/langs", "npm:3.7.0"],\
-          ["@shikijs/themes", "npm:3.7.0"],\
-          ["@shikijs/types", "npm:3.7.0"],\
+          ["@gerrit0/mini-shiki", "npm:3.9.2"],\
+          ["@shikijs/engine-oniguruma", "npm:3.9.2"],\
+          ["@shikijs/langs", "npm:3.9.2"],\
+          ["@shikijs/themes", "npm:3.9.2"],\
+          ["@shikijs/types", "npm:3.9.2"],\
           ["@shikijs/vscode-textmate", "npm:10.0.2"]\
         ],\
         "linkType": "HARD"\
@@ -2687,41 +2687,41 @@ const RAW_RUNTIME_STATE =
       }]\
     ]],\
     ["@shikijs/engine-oniguruma", [\
-      ["npm:3.7.0", {\
-        "packageLocation": "./.yarn/cache/@shikijs-engine-oniguruma-npm-3.7.0-55278dc8c1-e1ec52ec22.zip/node_modules/@shikijs/engine-oniguruma/",\
+      ["npm:3.9.2", {\
+        "packageLocation": "./.yarn/cache/@shikijs-engine-oniguruma-npm-3.9.2-99cad1ae1b-0955ea1fcb.zip/node_modules/@shikijs/engine-oniguruma/",\
         "packageDependencies": [\
-          ["@shikijs/engine-oniguruma", "npm:3.7.0"],\
-          ["@shikijs/types", "npm:3.7.0"],\
+          ["@shikijs/engine-oniguruma", "npm:3.9.2"],\
+          ["@shikijs/types", "npm:3.9.2"],\
           ["@shikijs/vscode-textmate", "npm:10.0.2"]\
         ],\
         "linkType": "HARD"\
       }]\
     ]],\
     ["@shikijs/langs", [\
-      ["npm:3.7.0", {\
-        "packageLocation": "./.yarn/cache/@shikijs-langs-npm-3.7.0-1ad6799ec4-326e8b014e.zip/node_modules/@shikijs/langs/",\
+      ["npm:3.9.2", {\
+        "packageLocation": "./.yarn/cache/@shikijs-langs-npm-3.9.2-52de1cff44-8adfe2fe3d.zip/node_modules/@shikijs/langs/",\
         "packageDependencies": [\
-          ["@shikijs/langs", "npm:3.7.0"],\
-          ["@shikijs/types", "npm:3.7.0"]\
+          ["@shikijs/langs", "npm:3.9.2"],\
+          ["@shikijs/types", "npm:3.9.2"]\
         ],\
         "linkType": "HARD"\
       }]\
     ]],\
     ["@shikijs/themes", [\
-      ["npm:3.7.0", {\
-        "packageLocation": "./.yarn/cache/@shikijs-themes-npm-3.7.0-a376315191-6887eb99b5.zip/node_modules/@shikijs/themes/",\
+      ["npm:3.9.2", {\
+        "packageLocation": "./.yarn/cache/@shikijs-themes-npm-3.9.2-d4139c015e-36f31d7159.zip/node_modules/@shikijs/themes/",\
         "packageDependencies": [\
-          ["@shikijs/themes", "npm:3.7.0"],\
-          ["@shikijs/types", "npm:3.7.0"]\
+          ["@shikijs/themes", "npm:3.9.2"],\
+          ["@shikijs/types", "npm:3.9.2"]\
         ],\
         "linkType": "HARD"\
       }]\
     ]],\
     ["@shikijs/types", [\
-      ["npm:3.7.0", {\
-        "packageLocation": "./.yarn/cache/@shikijs-types-npm-3.7.0-14ae11fff9-d7c4fcca35.zip/node_modules/@shikijs/types/",\
+      ["npm:3.9.2", {\
+        "packageLocation": "./.yarn/cache/@shikijs-types-npm-3.9.2-33d76631ff-16375f354c.zip/node_modules/@shikijs/types/",\
         "packageDependencies": [\
-          ["@shikijs/types", "npm:3.7.0"],\
+          ["@shikijs/types", "npm:3.9.2"],\
           ["@shikijs/vscode-textmate", "npm:10.0.2"],\
           ["@types/hast", "npm:3.0.4"]\
         ],\
@@ -7432,7 +7432,7 @@ const RAW_RUNTIME_STATE =
           ["redis", "npm:4.7.1"],\
           ["supertest", "npm:7.1.1"],\
           ["tsx", "npm:4.20.3"],\
-          ["typedoc", "virtual:896f9be96c54671e2a764d12dd66a3c4ecec90363a4b99a53cdfb2433e3475682e845d14c63ddcdbf06d1acefddd1660a84614f14966ab898a8eeadc4720efae#npm:0.28.7"],\
+          ["typedoc", "virtual:896f9be96c54671e2a764d12dd66a3c4ecec90363a4b99a53cdfb2433e3475682e845d14c63ddcdbf06d1acefddd1660a84614f14966ab898a8eeadc4720efae#npm:0.28.10"],\
           ["typedoc-plugin-markdown", "virtual:896f9be96c54671e2a764d12dd66a3c4ecec90363a4b99a53cdfb2433e3475682e845d14c63ddcdbf06d1acefddd1660a84614f14966ab898a8eeadc4720efae#npm:4.7.0"],\
           ["typescript", "patch:typescript@npm%3A5.8.3#optional!builtin<compat/typescript>::version=5.8.3&hash=5786d5"],\
           ["vitest", "virtual:09e1a04afd45af093cd8c29b97ddf4d19df61499634c38d0af82bb90c3d7132ade4b7fe95e3fb270962602a48f0e33defa03b58e28d078240eaec795cfcd7520#npm:3.2.4"],\
@@ -7452,7 +7452,7 @@ const RAW_RUNTIME_STATE =
           ["knip", "virtual:896f9be96c54671e2a764d12dd66a3c4ecec90363a4b99a53cdfb2433e3475682e845d14c63ddcdbf06d1acefddd1660a84614f14966ab898a8eeadc4720efae#npm:5.61.3"],\
           ["oxlint", "npm:1.5.0"],\
           ["phantom-api-client", "workspace:phantom-api"],\
-          ["typedoc", "virtual:896f9be96c54671e2a764d12dd66a3c4ecec90363a4b99a53cdfb2433e3475682e845d14c63ddcdbf06d1acefddd1660a84614f14966ab898a8eeadc4720efae#npm:0.28.7"],\
+          ["typedoc", "virtual:896f9be96c54671e2a764d12dd66a3c4ecec90363a4b99a53cdfb2433e3475682e845d14c63ddcdbf06d1acefddd1660a84614f14966ab898a8eeadc4720efae#npm:0.28.10"],\
           ["typedoc-plugin-markdown", "virtual:896f9be96c54671e2a764d12dd66a3c4ecec90363a4b99a53cdfb2433e3475682e845d14c63ddcdbf06d1acefddd1660a84614f14966ab898a8eeadc4720efae#npm:4.7.0"],\
           ["typescript", "patch:typescript@npm%3A5.8.3#optional!builtin<compat/typescript>::version=5.8.3&hash=5786d5"]\
         ],\
@@ -7474,7 +7474,7 @@ const RAW_RUNTIME_STATE =
           ["phantom-api-client", "workspace:phantom-api"],\
           ["phantom-api-monorepo", "workspace:."],\
           ["syncpack", "npm:13.0.4"],\
-          ["typedoc", "virtual:896f9be96c54671e2a764d12dd66a3c4ecec90363a4b99a53cdfb2433e3475682e845d14c63ddcdbf06d1acefddd1660a84614f14966ab898a8eeadc4720efae#npm:0.28.7"],\
+          ["typedoc", "virtual:896f9be96c54671e2a764d12dd66a3c4ecec90363a4b99a53cdfb2433e3475682e845d14c63ddcdbf06d1acefddd1660a84614f14966ab898a8eeadc4720efae#npm:0.28.10"],\
           ["typedoc-plugin-markdown", "virtual:896f9be96c54671e2a764d12dd66a3c4ecec90363a4b99a53cdfb2433e3475682e845d14c63ddcdbf06d1acefddd1660a84614f14966ab898a8eeadc4720efae#npm:4.7.0"],\
           ["typescript", "patch:typescript@npm%3A5.8.3#optional!builtin<compat/typescript>::version=5.8.3&hash=5786d5"]\
         ],\
@@ -9360,22 +9360,22 @@ const RAW_RUNTIME_STATE =
       }]\
     ]],\
     ["typedoc", [\
-      ["npm:0.28.7", {\
-        "packageLocation": "./.yarn/cache/typedoc-npm-0.28.7-01bffbbb89-30c942fa28.zip/node_modules/typedoc/",\
+      ["npm:0.28.10", {\
+        "packageLocation": "./.yarn/cache/typedoc-npm-0.28.10-58a1d5be8e-e1a91b87d2.zip/node_modules/typedoc/",\
         "packageDependencies": [\
-          ["typedoc", "npm:0.28.7"]\
+          ["typedoc", "npm:0.28.10"]\
         ],\
         "linkType": "SOFT"\
       }],\
-      ["virtual:896f9be96c54671e2a764d12dd66a3c4ecec90363a4b99a53cdfb2433e3475682e845d14c63ddcdbf06d1acefddd1660a84614f14966ab898a8eeadc4720efae#npm:0.28.7", {\
-        "packageLocation": "./.yarn/__virtual__/typedoc-virtual-5b61b0313a/0/cache/typedoc-npm-0.28.7-01bffbbb89-30c942fa28.zip/node_modules/typedoc/",\
+      ["virtual:896f9be96c54671e2a764d12dd66a3c4ecec90363a4b99a53cdfb2433e3475682e845d14c63ddcdbf06d1acefddd1660a84614f14966ab898a8eeadc4720efae#npm:0.28.10", {\
+        "packageLocation": "./.yarn/__virtual__/typedoc-virtual-bdc9b839d8/0/cache/typedoc-npm-0.28.10-58a1d5be8e-e1a91b87d2.zip/node_modules/typedoc/",\
         "packageDependencies": [\
-          ["@gerrit0/mini-shiki", "npm:3.7.0"],\
+          ["@gerrit0/mini-shiki", "npm:3.9.2"],\
           ["@types/typescript", null],\
           ["lunr", "npm:2.3.9"],\
           ["markdown-it", "npm:14.1.0"],\
           ["minimatch", "npm:9.0.5"],\
-          ["typedoc", "virtual:896f9be96c54671e2a764d12dd66a3c4ecec90363a4b99a53cdfb2433e3475682e845d14c63ddcdbf06d1acefddd1660a84614f14966ab898a8eeadc4720efae#npm:0.28.7"],\
+          ["typedoc", "virtual:896f9be96c54671e2a764d12dd66a3c4ecec90363a4b99a53cdfb2433e3475682e845d14c63ddcdbf06d1acefddd1660a84614f14966ab898a8eeadc4720efae#npm:0.28.10"],\
           ["typescript", "patch:typescript@npm%3A5.8.3#optional!builtin<compat/typescript>::version=5.8.3&hash=5786d5"],\
           ["yaml", "npm:2.8.0"]\
         ],\
@@ -9398,7 +9398,7 @@ const RAW_RUNTIME_STATE =
         "packageLocation": "./.yarn/__virtual__/typedoc-plugin-markdown-virtual-fe35c66dc1/0/cache/typedoc-plugin-markdown-npm-4.7.0-cab25d8c3f-066cb8a0f9.zip/node_modules/typedoc-plugin-markdown/",\
         "packageDependencies": [\
           ["@types/typedoc", null],\
-          ["typedoc", "virtual:896f9be96c54671e2a764d12dd66a3c4ecec90363a4b99a53cdfb2433e3475682e845d14c63ddcdbf06d1acefddd1660a84614f14966ab898a8eeadc4720efae#npm:0.28.7"],\
+          ["typedoc", "virtual:896f9be96c54671e2a764d12dd66a3c4ecec90363a4b99a53cdfb2433e3475682e845d14c63ddcdbf06d1acefddd1660a84614f14966ab898a8eeadc4720efae#npm:0.28.10"],\
           ["typedoc-plugin-markdown", "virtual:896f9be96c54671e2a764d12dd66a3c4ecec90363a4b99a53cdfb2433e3475682e845d14c63ddcdbf06d1acefddd1660a84614f14966ab898a8eeadc4720efae#npm:4.7.0"]\
         ],\
         "packagePeers": [\
