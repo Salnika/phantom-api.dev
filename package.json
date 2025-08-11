@@ -11,7 +11,7 @@
     "oxlint": "^1.0.0",
     "phantom-api-client": "workspace:*",
     "syncpack": "^13.0.4",
-    "typedoc": "^0.28.7",
+    "typedoc": "^0.28.10",
     "typedoc-plugin-markdown": "^4.7.0",
     "typescript": "^5.8.3"
   },
