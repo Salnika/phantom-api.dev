@@ -9,231 +9,336 @@
   [![npm downloads](https://img.shields.io/npm/dm/phantom-api-client.svg)](https://www.npmjs.com/package/phantom-api-client)
   [![GitHub stars](https://img.shields.io/github/stars/salnika/phantom-api.dev.svg)](https://github.com/salnika/phantom-api.dev)
   [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
-  [![TypeScript Ready](https://img.shields.io/badge/TypeScript-Ready-blue.svg)](https://www.typescriptlang.org/)
 </div>
 
-## TL;DR
+# Phantom API - Self-Generating Backend
 
-**It creates your backend by calling it** 🪄
+A dynamic backend system that automatically creates API endpoints, database tables, and validation schemas based on api call from frontend.
 
-No need to write schemas, migrations, or endpoints. Just call your API and watch it build itself in real-time!
+- [Website](https://phantom-api.dev)
+- [github](https://github.com/Salnika/phantom-api.dev)
+- [Complete Documentation](https://salnika.github.io/phantom-api.dev/)
 
-## Quick Example
+## Features
 
-```typescript
-import { createClient } from 'phantom-api-client';
+- **Dynamic API**: Single route `/api/:resource/:action` handles all operations
+- **Dynamic Table Creation**: Tables automatically created from API calls, no configuration needed
+- **Advanced Relations**: Foreign keys, cascading deletes, self-referencing tables
+- **Rich Field Types**: String, text, integer, boolean, datetime, enum, JSON, email
+- **Zod Validation**: Automatic schema generation and validation
+- **🆕 Advanced Policies Management**: Role-based, attribute-based, and custom access control policies
+- **JWT Security**: Secure authentication with configurable roles and permissions
+- **Admin Interface**: Modern React-based admin panel with policy management and logs viewer
+- **Client Package**: TypeScript NPM package for frontend integration
+- **Process Management**: PM2 ecosystem for production deployment
+- **Structured Logging**: Pino logger with file rotation and admin interface
+- **Docker Ready**: Containerized backend with persistent SQLite storage
 
-const client = createClient();
-client.setEndpoint('https://your-phantom-api.com');
+## Project Structure
 
-const users = client.resource('users');
-
-// 🎯 This single call creates the entire backend infrastructure
-await users.create({
-  name: 'John Doe',
-  email: 'john@example.com'
-});
-
-// ✨ Database table, validation rules, and REST endpoints are now live!
-const allUsers = await users.getAll();
+```
+├── phantom-api-backend/  # backend (Express server with dynamic API)
+│   ├── src/             # TypeScript source code
+│   ├── meta/            # Optional schema files (auto-generated)
+│   ├── logs/            # Application and error logs
+│   └── data/            # SQLite database files
+├── admin-interface/      # admin (React admin panel)
+├── phantom-api/          # client (NPM package for frontend integration)
+├── ecosystem.config.js  # PM2 process configuration
+├── Dockerfile           # Backend containerization
+└── docker-compose.yml   # Multi-service orchestration
 ```
 
-## Installation
+## Prerequisites
+
+Before getting started, ensure you have the following installed:
+
+### Required
+- **Node.js** 18+ (recommended: 22+)
+- **Yarn** 4.9.2 (package manager)
+- **Git** (version control)
+
+### Optional (for full development experience)
+- **PM2** (process management): `yarn add -g pm2`
+- **Python 3.8+** and **MkDocs** (documentation): `pip install mkdocs mkdocs-material`
+- **Docker** and **Docker Compose** (containerization)
+
+### Installation Verification
+```bash
+# Check versions
+node --version    # Should be 18+
+yarn --version    # Should be 4.9.2
+git --version     # Any recent version
+
+# Optional tools
+pm2 --version     # For process management
+mkdocs --version  # For documentation server
+docker --version  # For containerized deployment
+```
+
+## Quick Start
+
+### 1. Install Dependencies
+```bash
+yarn install
+```
+
+### 2. Environment Setup
+Copy the example environment file and configure it:
+```bash
+cp .env.example .env
+```
+
+Edit `.env` with your configuration:
+```env
+# Server Configuration
+PORT=3000
+NODE_ENV=development
+
+# JWT Secret Key (CHANGE THIS IN PRODUCTION!)
+JWT_SECRET=your-super-secret-jwt-key-change-this-in-production
+
+# Database Configuration
+DB_PATH=./data/phantom.db
+
+# Admin Panel Configuration
+ADMIN_EMAIL=admin@phantom-api.com
+ADMIN_PASSWORD=admin123
+```
+
+### 3. Start All Services with PM2
+```bash
+# Install PM2 globally (if not already installed)
+yarn add -g pm2
+
+# Start all services
+yarn pm2:start
+
+# Check status
+pm2 status
+
+# View logs
+yarn pm2:logs
+```
+
+Services will run on:
+- **Backend**: http://localhost:3000 - API endpoints and data management
+- **Admin Interface**: http://localhost:5173 - Modern admin panel with logs viewer
+- **# Demo Frontend**: http://localhost:5174 - Example application using the API
+- **Website**: http://localhost:5175 - Marketing and documentation site
+- **Documentation**: http://localhost:8000 - MkDocs technical documentation
+
+### 4. Alternative: Start Individual Services
+```bash
+# Backend only
+cd phantom-api-backend && yarn dev
+
+# Admin interface only  
+cd admin-interface && yarn dev
+
+# Demo frontend only
+cd demo && yarn dev
+
+# Documentation server only
+cd public-doc && mkdocs serve
+```
+
+### 5. Use Client Package
+```typescript
+import { setEndpoint, setToken, resource } from 'phantom-api';
+
+// Configure
+setEndpoint('http://localhost:3000');
+setToken('your-jwt-token'); // optional
+
+// Use resources
+const users = resource('User');
+await users.create({ email: 'test@example.com', name: 'John' });
+const allUsers = await users.read();
+
+// Update a user
+await users.update({ id: allUsers[0].id, name: 'John Doe Updated' });
+
+// Delete a user
+await users.delete({ id: allUsers[0].id });
+```
+
+## Docker Deployment
+
+For containerized deployment with optimized production setup:
 
 ```bash
-npm install phantom-api-client
-# or
-yarn add phantom-api-client
-# or  
-bun add phantom-api-client
+# Copy environment template
+cp .env.example .env
+
+# Generate secure JWT secret (32+ characters)
+openssl rand -base64 32
+# Copy to JWT_SECRET in .env
+
+# Build and start
+docker-compose up --build -d
+
+# Verify deployment
+curl http://localhost:3000/health
 ```
 
-## ✨ Features
+**Services accessible at:**
+- Backend API: http://localhost:3000
+- Admin Interface: http://localhost:3000/admin
+- Health Check: http://localhost:3000/health
 
-- 🪄 **Magic Backend Creation**: Your backend builds itself as you call it - no setup required!
-- 🚀 **Zero Boilerplate**: Skip the boring stuff, just start building features
-- 🔐 **Authentication Ready**: JWT tokens and sessions work out of the box  
-- 📊 **Type Safety**: TypeScript loves it, and so will you
-- 🎯 **Smart Queries**: Filter, sort, paginate like you're reading your mind
-- ⚡ **Lightning Fast**: Optimized for speed, built for scale
-- 🛠️ **CLI Superpowers**: Migrations and seeds that actually make sense
-- 💝 **Developer Joy**: Because coding should be fun, not frustrating
+For detailed Docker configuration, see documentation at http://localhost:8000 (when MkDocs is running).
 
-## 🚀 Quick Start
+## Dynamic Table Creation
 
-### Basic Usage
+Phantom API creates database tables automatically from your API calls - no configuration files needed!
+
+### How It Works
+
+1. **Call Any Resource**: Simply use `resource('AnyTableName')` in your frontend
+2. **Auto-Detection**: The system detects field types from the data you send
+3. **Table Creation**: SQLite tables are created instantly with appropriate columns
+4. **Schema Evolution**: New fields are automatically added when you send new data
+
+### Field Type Detection
 
 ```typescript
-import { createClient } from 'phantom-api-client';
-
-// Initialize the client (yes, it's this simple)
-const client = createClient();
-client.setEndpoint('https://your-phantom-api.com');
-
-// Grab a resource (it doesn't exist yet, but it will!)
-const users = client.resource('users');
-
-// Create a user (and boom! 💥 The entire backend comes to life)
-await users.create({
-  name: 'John Doe',
-  email: 'john@example.com'
+// These calls automatically create a User table
+const User = resource('User');
+User.create({
+  email: 'user@example.com',    // → VARCHAR (email format detected)
+  name: 'John Doe',             // → VARCHAR 
+  age: 30,                      // → INTEGER
+  isActive: true,               // → BOOLEAN
+  birthDate: '1990-01-01',      // → DATE
+  createdAt: new Date(),        // → DATETIME
+  metadata: { role: 'admin' }   // → JSON
 });
-
-// Now you can do all the usual stuff
-const allUsers = await users.getAll();
-const user = await users.get(1);
-await users.update(1, { name: 'Jane Doe' });
-await users.delete(1);
 ```
 
-### Advanced Usage (aka the cool stuff 😎)
+### Automatic Relations
 
 ```typescript
-// Query like a pro
-const activeUsers = await users.getAll({
-  filters: { status: 'active' },
-  sort: 'created_at:desc',
-  limit: 10,
-  offset: 0
-});
-
-// Relationships? We got you covered
-const posts = client.resource('posts');
-const userPosts = await posts.getAll({
-  filters: { user_id: 1 }
-});
-
-// Batch operations because why not?
-await users.createMany([
-  { name: 'User 1', email: 'user1@example.com' },
-  { name: 'User 2', email: 'user2@example.com' }
-]);
-```
-
-### Authentication (secure by default 🔒)
-
-```typescript
-// Just plug in your token
-client.setAuth('your-jwt-token');
-
-// Or do it all at once
-const client = createClient({
-  endpoint: 'https://your-phantom-api.com',
-  token: 'your-jwt-token'
+// Foreign key relationships are auto-detected
+const Article = resource('Article');
+Article.create({
+  title: 'My Article',
+  content: 'Article content...',
+  authorId: 'user_123',         // → Creates FK to User table
+  categoryId: 'cat_456'         // → Creates FK to Category table  
 });
 ```
 
-## 🛠️ CLI Tools (for when you want to feel like a wizard 🧙‍♂️)
+### Supported Data Types
 
-### Migration CLI
+- **String**: Text fields, emails, URLs
+- **Integer**: Numbers, IDs, counts
+- **Boolean**: true/false values
+- **Date**: ISO date strings
+- **DateTime**: ISO datetime strings
+- **JSON**: Objects and arrays
+- **Relations**: Foreign keys (detected by 'Id' suffix)
 
+## API Usage
+
+All operations use POST requests to `/api/:resource/:action`:
+
+### Create
 ```bash
-# Generate a new migration
-phantom-migration generate create_users_table
-
-# Run migrations
-phantom-migration up
-
-# Rollback migrations
-phantom-migration down
+curl -X POST http://localhost:3000/api/User/create \
+  -H "Content-Type: application/json" \
+  -d '{"email": "user@example.com", "name": "John Doe"}'
 ```
 
-### Seed CLI
-
+### Read
 ```bash
-# Create seed data
-phantom-seed create users
+# Get all
+curl -X POST http://localhost:3000/api/User/read \
+  -H "Content-Type: application/json" \
+  -d '{}'
 
-# Run seeds
-phantom-seed run
+# Get by ID
+curl -X POST http://localhost:3000/api/User/read \
+  -H "Content-Type: application/json" \
+  -d '{"id": "user_123"}'
 ```
 
-## 📖 API Reference
+### Update
+```bash
+curl -X POST http://localhost:3000/api/User/update \
+  -H "Content-Type: application/json" \
+  -d '{"id": "user_123", "name": "Jane Doe"}'
+```
 
-### Client Methods
+### Delete
+```bash
+curl -X POST http://localhost:3000/api/User/delete \
+  -H "Content-Type: application/json" \
+  -d '{"id": "user_123"}'
+```
 
-- `createClient(options?)` - Create a new Phantom API client
-- `setEndpoint(url)` - Set the API endpoint URL
-- `resource(name)` - Get a resource instance
-- `setAuth(token)` - Set authentication token
+## Authentication & Authorization
 
-### Resource Methods
+### JWT Authentication
+Generate JWT tokens in the admin interface with configurable roles:
+- `anon`: Anonymous access (limited)
+- `user`: Standard user permissions
+- `admin`: Administrative access
+- `moderator`: Content moderation permissions
+- `viewer`: Read-only access
+- `editor`: Content editing permissions
 
-- `getAll(options?)` - Fetch all records
-- `get(id)` - Fetch single record by ID
-- `create(data)` - Create new record
-- `createMany(data[])` - Create multiple records
-- `update(id, data)` - Update existing record
-- `delete(id)` - Delete record
-- `count(filters?)` - Count records
+### Advanced Policies System
+Phantom API now includes a comprehensive policies management system:
 
-### Query Options
+- **Role-Based Access Control (RBAC)**: Traditional role-based permissions
+- **Attribute-Based Access Control (ABAC)**: Dynamic permissions based on user/resource attributes
+- **Custom Policies**: Complex business logic with conditional rules
+- **Policy Templates**: Pre-built policies for common scenarios
+- **Real-time Testing**: Test policies before deployment
+- **Analytics & Monitoring**: Track policy usage and access patterns
 
-```typescript
-interface QueryOptions {
-  filters?: Record<string, any>;
-  sort?: string;
-  limit?: number;
-  offset?: number;
-  include?: string[];
+**Example Policy:**
+```json
+{
+  "name": "User Data Ownership",
+  "type": "ATTRIBUTE_BASED",
+  "rules": [
+    {
+      "resource": "User",
+      "action": "update",
+      "effect": "ALLOW",
+      "conditions": [
+        {
+          "field": "user.id",
+          "operator": "eq",
+          "value": "${resource.id}",
+          "context": "user"
+        }
+      ]
+    }
+  ]
 }
 ```
 
-## Real-World Examples
+**Security Note**: Make sure to change the default JWT_SECRET in production!
 
-### E-commerce Store
-```typescript
-// Product catalog with categories
-await client.resource('products').create({
-  name: 'iPhone 15 Pro',
-  price: 999.99,
-  category_id: 'electronics',
-  in_stock: true
-});
-```
+📖 **[Complete Policies Documentation](./POLICIES_DOCUMENTATION.md)**
 
-### Task Management
-```typescript
-// Project tasks with assignments
-await client.resource('tasks').create({
-  title: 'Design new homepage',
-  assignee_id: 'user_456',
-  project_id: 'proj_123',
-  status: 'in_progress',
-  priority: 'high'
-});
-```
+## How It Works
 
-## Environment Management
+1. **Frontend Call**: `resource('User').create({ email: 'test@mail.com', name: 'MARTIN' })`
+2. **Auto-Detection**: System analyzes data types and structure
+3. **Table Creation**: SQLite table created instantly if it doesn't exist
+4. **Schema Evolution**: New columns added automatically for new fields
+5. **Response**: Data saved and returned with generated ID
 
-```typescript
-const devClient = createClient({
-  endpoint: 'http://localhost:3000'
-});
+The system learns from your data and automatically:
+- Creates tables with appropriate column types
+- Detects relationships from field names (e.g., 'authorId' → User table)
+- Generates validation schemas on-the-fly
+- Provides admin interface for data management
 
-const prodClient = createClient({
-  endpoint: 'https://api.yourapp.com',
-  token: process.env.PHANTOM_API_TOKEN
-});
-```
+**Zero configuration required** - just start coding and let Phantom API handle the database!
 
-## 🤝 Contributing
-
-We welcome contributions! Please see our [Contributing Guide](../CONTRIBUTING.md) for details.
-
-## 📄 License
-
-Licensed under the [MIT License](LICENSE).
-
-## 🆘 Support
-
-- 📖 [Documentation](https://github.com/salnika/phantom-api.dev)
-- 🐛 [Issue Tracker](https://github.com/salnika/phantom-api.dev/issues)
-- 💬 [Discussions](https://github.com/salnika/phantom-api.dev/discussions)
-
----
-
-<div align="center">
-  <strong>Built with ❤️ by the Phantom API team</strong><br>
-  <em>Connect to powerful backends without the complexity.</em>
-</div>
+Perfect for rapid prototyping and dynamic applications!
