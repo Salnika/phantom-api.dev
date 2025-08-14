@@ -2,22 +2,26 @@
   <img src="assets/logo-white-and-black.svg" alt="Phantom API Logo" width="220" />
 
   <!-- Badges -->
-  <p>
-    <a href="https://github.com/salnika/phantom-api.dev/actions"><img src="https://img.shields.io/github/actions/workflow/status/salnika/phantom-api.dev/dispatch.yml?branch=main&label=CI" alt="CI Status"></a>
-    <a href="https://github.com/salnika/phantom-api.dev/releases/latest"><img src="https://img.shields.io/github/v/tag/salnika/phantom-api.dev?label=latest" alt="Latest Release"></a>
-    <a href="https://github.com/salnika/phantom-api.dev/blob/main/LICENSE"><img src="https://img.shields.io/github/license/salnika/phantom-api.dev?color=blue" alt="License"></a>
-    <img src="https://img.shields.io/badge/node-%3E=20.0.0-green.svg" alt="Node.js Version">
-    <img src="https://img.shields.io/badge/yarn-4.9.2-2c8ebb.svg" alt="Yarn">
-    <a href="https://www.npmjs.com/package/phantom-api-client"><img src="https://img.shields.io/npm/v/phantom-api-client.svg?label=client" alt="npm version"></a>
-    <a href="https://hub.docker.com/r/salnika/phantom-api.dev"><img src="https://img.shields.io/docker/v/salnika/phantom-api.dev?sort=semver&label=backend" alt="Docker image version"></a>
-  </p>
+  <table>
+    <tr>
+      <td><a href="https://github.com/salnika/phantom-api.dev/releases/latest"><img src="https://img.shields.io/github/v/tag/salnika/phantom-api.dev?label=latest" alt="Latest Release"></a></td>
+      <td><a href="https://www.npmjs.com/package/phantom-api-client"><img src="https://img.shields.io/npm/v/phantom-api-client.svg?label=client" alt="npm version"></a></td>
+      <td><a href="https://hub.docker.com/r/salnika/phantom-api.dev"><img src="https://img.shields.io/docker/v/salnika/phantom-api.dev?sort=semver&label=backend" alt="Docker image version"></a></td>
+    </tr>
+    <tr>
+      <td><a href="https://hub.docker.com/r/salnika/phantom-api.dev"><img src="https://img.shields.io/badge/Docket-you_like-blue" alt="Docker"></a></td>
+      <td colspan="3"><a href="https://github.com/salnika/phantom-api.dev/blob/main/LICENSE"><img src="https://img.shields.io/badge/License-MIT-blue" alt="License"></a></td>
+    </tr>
+  </table>
 </div>
 
 # Phantom API - Self-Generating Backend
 
 A dynamic backend system that automatically creates API endpoints, database tables, and validation schemas based on api call from frontend.
 
-[Complete Documentation](https://salnika.github.io/phantom-api.dev/)
+- [Website](https://phantom-api.dev)
+- [github](https://github.com/Salnika/phantom-api.dev)
+- [Complete Documentation](https://salnika.github.io/phantom-api.dev/)
 
 ## Features
 
