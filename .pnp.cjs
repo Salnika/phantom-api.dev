@@ -3476,7 +3476,7 @@ const RAW_RUNTIME_STATE =
           ["knip", "virtual:896f9be96c54671e2a764d12dd66a3c4ecec90363a4b99a53cdfb2433e3475682e845d14c63ddcdbf06d1acefddd1660a84614f14966ab898a8eeadc4720efae#npm:5.61.3"],\
           ["lucide-react", "virtual:4253337b4cd30e157fb9d4ddb93d42b7428af1121c63f21457fca930fbd00d9ed15d11be45331f32e1dd585b11e6fb86d2599a3fe4a31802e79ec051db662869#npm:0.525.0"],\
           ["oxlint", "npm:1.5.0"],\
-          ["pino", "npm:9.7.0"],\
+          ["pino", "npm:9.13.1"],\
           ["postcss", "npm:8.5.6"],\
           ["react", "npm:19.1.0"],\
           ["react-dom", "virtual:4253337b4cd30e157fb9d4ddb93d42b7428af1121c63f21457fca930fbd00d9ed15d11be45331f32e1dd585b11e6fb86d2599a3fe4a31802e79ec051db662869#npm:19.1.0"],\
@@ -5095,15 +5095,6 @@ const RAW_RUNTIME_STATE =
           ["glob-parent", "npm:5.1.2"],\
           ["merge2", "npm:1.4.1"],\
           ["micromatch", "npm:4.0.8"]\
-        ],\
-        "linkType": "HARD"\
-      }]\
-    ]],\
-    ["fast-redact", [\
-      ["npm:3.5.0", {\
-        "packageLocation": "./.yarn/cache/fast-redact-npm-3.5.0-80acfe2b04-7e2ce4aad6.zip/node_modules/fast-redact/",\
-        "packageDependencies": [\
-          ["fast-redact", "npm:3.5.0"]\
         ],\
         "linkType": "HARD"\
       }]\
@@ -7427,7 +7418,7 @@ const RAW_RUNTIME_STATE =
           ["oxlint", "npm:1.5.0"],\
           ["pg", "virtual:09e1a04afd45af093cd8c29b97ddf4d19df61499634c38d0af82bb90c3d7132ade4b7fe95e3fb270962602a48f0e33defa03b58e28d078240eaec795cfcd7520#npm:8.16.3"],\
           ["phantom-api-backend", "workspace:phantom-api-backend"],\
-          ["pino", "npm:9.7.0"],\
+          ["pino", "npm:9.13.1"],\
           ["pino-pretty", "npm:13.0.0"],\
           ["redis", "npm:4.7.1"],\
           ["supertest", "npm:7.1.1"],\
@@ -7523,19 +7514,19 @@ const RAW_RUNTIME_STATE =
       }]\
     ]],\
     ["pino", [\
-      ["npm:9.7.0", {\
-        "packageLocation": "./.yarn/cache/pino-npm-9.7.0-169cc56689-c7f8a83a9a.zip/node_modules/pino/",\
+      ["npm:9.13.1", {\
+        "packageLocation": "./.yarn/cache/pino-npm-9.13.1-b946e6bb1b-c99e879f95.zip/node_modules/pino/",\
         "packageDependencies": [\
           ["atomic-sleep", "npm:1.0.0"],\
-          ["fast-redact", "npm:3.5.0"],\
           ["on-exit-leak-free", "npm:2.1.2"],\
-          ["pino", "npm:9.7.0"],\
+          ["pino", "npm:9.13.1"],\
           ["pino-abstract-transport", "npm:2.0.0"],\
           ["pino-std-serializers", "npm:7.0.0"],\
           ["process-warning", "npm:5.0.0"],\
           ["quick-format-unescaped", "npm:4.0.4"],\
           ["real-require", "npm:0.2.0"],\
           ["safe-stable-stringify", "npm:2.5.0"],\
+          ["slow-redact", "npm:0.3.1"],\
           ["sonic-boom", "npm:4.2.0"],\
           ["thread-stream", "npm:3.1.0"]\
         ],\
@@ -8646,6 +8637,15 @@ const RAW_RUNTIME_STATE =
         "packageLocation": "./.yarn/cache/slash-npm-5.1.0-718a84282e-eb48b815ca.zip/node_modules/slash/",\
         "packageDependencies": [\
           ["slash", "npm:5.1.0"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
+    ["slow-redact", [\
+      ["npm:0.3.1", {\
+        "packageLocation": "./.yarn/cache/slow-redact-npm-0.3.1-ce96227649-7f495a8510.zip/node_modules/slow-redact/",\
+        "packageDependencies": [\
+          ["slow-redact", "npm:0.3.1"]\
         ],\
         "linkType": "HARD"\
       }]\
