@@ -55,7 +55,7 @@ const RAW_RUNTIME_STATE =
           ["chalk", "npm:4.1.2"],\
           ["dotenv", "npm:17.0.1"],\
           ["knip", "virtual:896f9be96c54671e2a764d12dd66a3c4ecec90363a4b99a53cdfb2433e3475682e845d14c63ddcdbf06d1acefddd1660a84614f14966ab898a8eeadc4720efae#npm:5.61.3"],\
-          ["oxlint", "npm:1.5.0"],\
+          ["oxlint", "virtual:896f9be96c54671e2a764d12dd66a3c4ecec90363a4b99a53cdfb2433e3475682e845d14c63ddcdbf06d1acefddd1660a84614f14966ab898a8eeadc4720efae#npm:1.23.0"],\
           ["phantom-api-client", "workspace:phantom-api"],\
           ["phantom-api-monorepo", "workspace:."],\
           ["syncpack", "npm:13.0.4"],\
@@ -1365,73 +1365,73 @@ const RAW_RUNTIME_STATE =
       }]\
     ]],\
     ["@oxlint/darwin-arm64", [\
-      ["npm:1.5.0", {\
-        "packageLocation": "./.yarn/unplugged/@oxlint-darwin-arm64-npm-1.5.0-030eb2f6f6/node_modules/@oxlint/darwin-arm64/",\
+      ["npm:1.23.0", {\
+        "packageLocation": "./.yarn/unplugged/@oxlint-darwin-arm64-npm-1.23.0-f1491d863d/node_modules/@oxlint/darwin-arm64/",\
         "packageDependencies": [\
-          ["@oxlint/darwin-arm64", "npm:1.5.0"]\
+          ["@oxlint/darwin-arm64", "npm:1.23.0"]\
         ],\
         "linkType": "HARD"\
       }]\
     ]],\
     ["@oxlint/darwin-x64", [\
-      ["npm:1.5.0", {\
-        "packageLocation": "./.yarn/unplugged/@oxlint-darwin-x64-npm-1.5.0-baa3b39f29/node_modules/@oxlint/darwin-x64/",\
+      ["npm:1.23.0", {\
+        "packageLocation": "./.yarn/unplugged/@oxlint-darwin-x64-npm-1.23.0-34f4b84d36/node_modules/@oxlint/darwin-x64/",\
         "packageDependencies": [\
-          ["@oxlint/darwin-x64", "npm:1.5.0"]\
+          ["@oxlint/darwin-x64", "npm:1.23.0"]\
         ],\
         "linkType": "HARD"\
       }]\
     ]],\
     ["@oxlint/linux-arm64-gnu", [\
-      ["npm:1.5.0", {\
-        "packageLocation": "./.yarn/unplugged/@oxlint-linux-arm64-gnu-npm-1.5.0-32084c94de/node_modules/@oxlint/linux-arm64-gnu/",\
+      ["npm:1.23.0", {\
+        "packageLocation": "./.yarn/unplugged/@oxlint-linux-arm64-gnu-npm-1.23.0-d2f758e444/node_modules/@oxlint/linux-arm64-gnu/",\
         "packageDependencies": [\
-          ["@oxlint/linux-arm64-gnu", "npm:1.5.0"]\
+          ["@oxlint/linux-arm64-gnu", "npm:1.23.0"]\
         ],\
         "linkType": "HARD"\
       }]\
     ]],\
     ["@oxlint/linux-arm64-musl", [\
-      ["npm:1.5.0", {\
-        "packageLocation": "./.yarn/unplugged/@oxlint-linux-arm64-musl-npm-1.5.0-c0354bfa1e/node_modules/@oxlint/linux-arm64-musl/",\
+      ["npm:1.23.0", {\
+        "packageLocation": "./.yarn/unplugged/@oxlint-linux-arm64-musl-npm-1.23.0-2e0dea1c3a/node_modules/@oxlint/linux-arm64-musl/",\
         "packageDependencies": [\
-          ["@oxlint/linux-arm64-musl", "npm:1.5.0"]\
+          ["@oxlint/linux-arm64-musl", "npm:1.23.0"]\
         ],\
         "linkType": "HARD"\
       }]\
     ]],\
     ["@oxlint/linux-x64-gnu", [\
-      ["npm:1.5.0", {\
-        "packageLocation": "./.yarn/unplugged/@oxlint-linux-x64-gnu-npm-1.5.0-e9fea2f7da/node_modules/@oxlint/linux-x64-gnu/",\
+      ["npm:1.23.0", {\
+        "packageLocation": "./.yarn/unplugged/@oxlint-linux-x64-gnu-npm-1.23.0-1fc2f50ea1/node_modules/@oxlint/linux-x64-gnu/",\
         "packageDependencies": [\
-          ["@oxlint/linux-x64-gnu", "npm:1.5.0"]\
+          ["@oxlint/linux-x64-gnu", "npm:1.23.0"]\
         ],\
         "linkType": "HARD"\
       }]\
     ]],\
     ["@oxlint/linux-x64-musl", [\
-      ["npm:1.5.0", {\
-        "packageLocation": "./.yarn/unplugged/@oxlint-linux-x64-musl-npm-1.5.0-665e65e480/node_modules/@oxlint/linux-x64-musl/",\
+      ["npm:1.23.0", {\
+        "packageLocation": "./.yarn/unplugged/@oxlint-linux-x64-musl-npm-1.23.0-fc3428ec83/node_modules/@oxlint/linux-x64-musl/",\
         "packageDependencies": [\
-          ["@oxlint/linux-x64-musl", "npm:1.5.0"]\
+          ["@oxlint/linux-x64-musl", "npm:1.23.0"]\
         ],\
         "linkType": "HARD"\
       }]\
     ]],\
     ["@oxlint/win32-arm64", [\
-      ["npm:1.5.0", {\
-        "packageLocation": "./.yarn/unplugged/@oxlint-win32-arm64-npm-1.5.0-4e56823ac4/node_modules/@oxlint/win32-arm64/",\
+      ["npm:1.23.0", {\
+        "packageLocation": "./.yarn/unplugged/@oxlint-win32-arm64-npm-1.23.0-87089333fe/node_modules/@oxlint/win32-arm64/",\
         "packageDependencies": [\
-          ["@oxlint/win32-arm64", "npm:1.5.0"]\
+          ["@oxlint/win32-arm64", "npm:1.23.0"]\
         ],\
         "linkType": "HARD"\
       }]\
     ]],\
     ["@oxlint/win32-x64", [\
-      ["npm:1.5.0", {\
-        "packageLocation": "./.yarn/unplugged/@oxlint-win32-x64-npm-1.5.0-932012f8ec/node_modules/@oxlint/win32-x64/",\
+      ["npm:1.23.0", {\
+        "packageLocation": "./.yarn/unplugged/@oxlint-win32-x64-npm-1.23.0-4df7bb1348/node_modules/@oxlint/win32-x64/",\
         "packageDependencies": [\
-          ["@oxlint/win32-x64", "npm:1.5.0"]\
+          ["@oxlint/win32-x64", "npm:1.23.0"]\
         ],\
         "linkType": "HARD"\
       }]\
@@ -3475,7 +3475,7 @@ const RAW_RUNTIME_STATE =
           ["jsdom", "virtual:4253337b4cd30e157fb9d4ddb93d42b7428af1121c63f21457fca930fbd00d9ed15d11be45331f32e1dd585b11e6fb86d2599a3fe4a31802e79ec051db662869#npm:26.1.0"],\
           ["knip", "virtual:896f9be96c54671e2a764d12dd66a3c4ecec90363a4b99a53cdfb2433e3475682e845d14c63ddcdbf06d1acefddd1660a84614f14966ab898a8eeadc4720efae#npm:5.61.3"],\
           ["lucide-react", "virtual:4253337b4cd30e157fb9d4ddb93d42b7428af1121c63f21457fca930fbd00d9ed15d11be45331f32e1dd585b11e6fb86d2599a3fe4a31802e79ec051db662869#npm:0.525.0"],\
-          ["oxlint", "npm:1.5.0"],\
+          ["oxlint", "virtual:896f9be96c54671e2a764d12dd66a3c4ecec90363a4b99a53cdfb2433e3475682e845d14c63ddcdbf06d1acefddd1660a84614f14966ab898a8eeadc4720efae#npm:1.23.0"],\
           ["pino", "npm:9.7.0"],\
           ["postcss", "npm:8.5.6"],\
           ["react", "npm:19.1.0"],\
@@ -7068,18 +7068,31 @@ const RAW_RUNTIME_STATE =
       }]\
     ]],\
     ["oxlint", [\
-      ["npm:1.5.0", {\
-        "packageLocation": "./.yarn/cache/oxlint-npm-1.5.0-b9b3f1b97f-663ca8ec44.zip/node_modules/oxlint/",\
+      ["npm:1.23.0", {\
+        "packageLocation": "./.yarn/cache/oxlint-npm-1.23.0-761145dbc9-007fb465a1.zip/node_modules/oxlint/",\
         "packageDependencies": [\
-          ["@oxlint/darwin-arm64", "npm:1.5.0"],\
-          ["@oxlint/darwin-x64", "npm:1.5.0"],\
-          ["@oxlint/linux-arm64-gnu", "npm:1.5.0"],\
-          ["@oxlint/linux-arm64-musl", "npm:1.5.0"],\
-          ["@oxlint/linux-x64-gnu", "npm:1.5.0"],\
-          ["@oxlint/linux-x64-musl", "npm:1.5.0"],\
-          ["@oxlint/win32-arm64", "npm:1.5.0"],\
-          ["@oxlint/win32-x64", "npm:1.5.0"],\
-          ["oxlint", "npm:1.5.0"]\
+          ["oxlint", "npm:1.23.0"]\
+        ],\
+        "linkType": "SOFT"\
+      }],\
+      ["virtual:896f9be96c54671e2a764d12dd66a3c4ecec90363a4b99a53cdfb2433e3475682e845d14c63ddcdbf06d1acefddd1660a84614f14966ab898a8eeadc4720efae#npm:1.23.0", {\
+        "packageLocation": "./.yarn/__virtual__/oxlint-virtual-f4400d4302/0/cache/oxlint-npm-1.23.0-761145dbc9-007fb465a1.zip/node_modules/oxlint/",\
+        "packageDependencies": [\
+          ["@oxlint/darwin-arm64", "npm:1.23.0"],\
+          ["@oxlint/darwin-x64", "npm:1.23.0"],\
+          ["@oxlint/linux-arm64-gnu", "npm:1.23.0"],\
+          ["@oxlint/linux-arm64-musl", "npm:1.23.0"],\
+          ["@oxlint/linux-x64-gnu", "npm:1.23.0"],\
+          ["@oxlint/linux-x64-musl", "npm:1.23.0"],\
+          ["@oxlint/win32-arm64", "npm:1.23.0"],\
+          ["@oxlint/win32-x64", "npm:1.23.0"],\
+          ["@types/oxlint-tsgolint", null],\
+          ["oxlint", "virtual:896f9be96c54671e2a764d12dd66a3c4ecec90363a4b99a53cdfb2433e3475682e845d14c63ddcdbf06d1acefddd1660a84614f14966ab898a8eeadc4720efae#npm:1.23.0"],\
+          ["oxlint-tsgolint", null]\
+        ],\
+        "packagePeers": [\
+          "@types/oxlint-tsgolint",\
+          "oxlint-tsgolint"\
         ],\
         "linkType": "HARD"\
       }]\
@@ -7424,7 +7437,7 @@ const RAW_RUNTIME_STATE =
           ["helmet", "npm:8.1.0"],\
           ["jsonwebtoken", "npm:9.0.2"],\
           ["knip", "virtual:896f9be96c54671e2a764d12dd66a3c4ecec90363a4b99a53cdfb2433e3475682e845d14c63ddcdbf06d1acefddd1660a84614f14966ab898a8eeadc4720efae#npm:5.61.3"],\
-          ["oxlint", "npm:1.5.0"],\
+          ["oxlint", "virtual:896f9be96c54671e2a764d12dd66a3c4ecec90363a4b99a53cdfb2433e3475682e845d14c63ddcdbf06d1acefddd1660a84614f14966ab898a8eeadc4720efae#npm:1.23.0"],\
           ["pg", "virtual:09e1a04afd45af093cd8c29b97ddf4d19df61499634c38d0af82bb90c3d7132ade4b7fe95e3fb270962602a48f0e33defa03b58e28d078240eaec795cfcd7520#npm:8.16.3"],\
           ["phantom-api-backend", "workspace:phantom-api-backend"],\
           ["pino", "npm:9.7.0"],\
@@ -7450,7 +7463,7 @@ const RAW_RUNTIME_STATE =
           ["chalk", "npm:4.1.2"],\
           ["commander", "npm:12.1.0"],\
           ["knip", "virtual:896f9be96c54671e2a764d12dd66a3c4ecec90363a4b99a53cdfb2433e3475682e845d14c63ddcdbf06d1acefddd1660a84614f14966ab898a8eeadc4720efae#npm:5.61.3"],\
-          ["oxlint", "npm:1.5.0"],\
+          ["oxlint", "virtual:896f9be96c54671e2a764d12dd66a3c4ecec90363a4b99a53cdfb2433e3475682e845d14c63ddcdbf06d1acefddd1660a84614f14966ab898a8eeadc4720efae#npm:1.23.0"],\
           ["phantom-api-client", "workspace:phantom-api"],\
           ["typedoc", "virtual:896f9be96c54671e2a764d12dd66a3c4ecec90363a4b99a53cdfb2433e3475682e845d14c63ddcdbf06d1acefddd1660a84614f14966ab898a8eeadc4720efae#npm:0.28.7"],\
           ["typedoc-plugin-markdown", "virtual:896f9be96c54671e2a764d12dd66a3c4ecec90363a4b99a53cdfb2433e3475682e845d14c63ddcdbf06d1acefddd1660a84614f14966ab898a8eeadc4720efae#npm:4.7.0"],\
@@ -7470,7 +7483,7 @@ const RAW_RUNTIME_STATE =
           ["chalk", "npm:4.1.2"],\
           ["dotenv", "npm:17.0.1"],\
           ["knip", "virtual:896f9be96c54671e2a764d12dd66a3c4ecec90363a4b99a53cdfb2433e3475682e845d14c63ddcdbf06d1acefddd1660a84614f14966ab898a8eeadc4720efae#npm:5.61.3"],\
-          ["oxlint", "npm:1.5.0"],\
+          ["oxlint", "virtual:896f9be96c54671e2a764d12dd66a3c4ecec90363a4b99a53cdfb2433e3475682e845d14c63ddcdbf06d1acefddd1660a84614f14966ab898a8eeadc4720efae#npm:1.23.0"],\
           ["phantom-api-client", "workspace:phantom-api"],\
           ["phantom-api-monorepo", "workspace:."],\
           ["syncpack", "npm:13.0.4"],\
