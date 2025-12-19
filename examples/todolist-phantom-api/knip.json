@@ -1,0 +1,12 @@
+{
+    "entry": "src/main.tsx",
+    "ignoreBinaries": [
+        "knip",
+        "oxlint",
+        "tsc",
+        "vite"
+    ],
+    "ignoreDependencies": [
+        "oxlint"
+    ]
+}

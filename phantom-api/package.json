@@ -1,6 +1,6 @@
 {
   "name": "phantom-api-client",
-  "version": "0.2.0-alpha",
+  "version": "0.2.0-alpha.1",
   "bin": {
     "phantom-migration": "dist/migration-cli.js",
     "phantom-seed": "dist/seed-cli.js"

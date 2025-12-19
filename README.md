@@ -9,7 +9,7 @@
       <td><a href="https://hub.docker.com/r/salnika/phantom-api.dev"><img src="https://img.shields.io/docker/v/salnika/phantom-api.dev?sort=semver&label=backend" alt="Docker image version"></a></td>
     </tr>
     <tr>
-      <td><a href="https://hub.docker.com/r/salnika/phantom-api.dev"><img src="https://img.shields.io/badge/Docket-you_like-blue" alt="Docker"></a></td>
+      <td><a href="https://hub.docker.com/r/salnika/phantom-api.dev"><img src="https://img.shields.io/badge/Docker-image-blue" alt="Docker"></a></td>
       <td colspan="3"><a href="https://github.com/salnika/phantom-api.dev/blob/main/LICENSE"><img src="https://img.shields.io/badge/License-MIT-blue" alt="License"></a></td>
     </tr>
   </table>
